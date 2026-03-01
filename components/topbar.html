@@ -1,0 +1,63 @@
+<div class="flex items-center justify-between h-full px-6">
+  <!-- Search Bar -->
+  <div class="flex-1 max-w-lg">
+    <div class="relative flex items-center">
+      <i
+        class="ph ph-magnifying-glass absolute left-3 text-lg text-slate-400"
+      ></i>
+      <input
+        type="text"
+        placeholder="Search PIN, Owner, TCT/OCT Number..."
+        class="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent bg-slate-50 transition-shadow"
+      />
+    </div>
+  </div>
+
+  <!-- Right Actions -->
+  <div class="flex items-center space-x-6">
+    <!-- Role Toggle Simulation -->
+    <div class="flex items-center space-x-3 border-r border-slate-200 pr-6">
+      <div
+        class="flex items-center text-slate-500 text-xs font-bold uppercase tracking-wide gap-2"
+      >
+        <i class="ph ph-toggle-left text-lg"></i>
+        <span>Role View:</span>
+      </div>
+      <select
+        id="role-selector"
+        class="bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-md focus:ring-slate-300 focus:border-slate-300 block p-1.5 px-3 cursor-pointer outline-none"
+      >
+        <option value="viewer">Viewer</option>
+        <option value="staff" selected>Staff</option>
+        <option value="admin">Admin</option>
+      </select>
+    </div>
+
+    <!-- Notification -->
+    <button
+      class="text-slate-400 hover:text-slate-600 relative transition-colors"
+    >
+      <i class="ph ph-bell text-2xl"></i>
+      <span
+        class="absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white"
+      ></span>
+    </button>
+
+    <!-- User Profile -->
+    <div
+      class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
+    >
+      <div class="text-right hidden md:block">
+        <p class="text-sm font-bold text-slate-700 leading-tight">
+          Juan Dela Cruz
+        </p>
+        <p class="text-xs text-slate-500">Assessor I</p>
+      </div>
+      <div
+        class="h-9 w-9 rounded-full bg-slate-800 text-white flex items-center justify-center border border-slate-200 shadow-sm"
+      >
+        <span class="text-xs font-bold">JD</span>
+      </div>
+    </div>
+  </div>
+</div>

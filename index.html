@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DORMS | Digital Ownership Record Management System</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons (Modern Icon Set) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+      /* Custom Scrollbar for professional feel */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      /* Font fix for icons alignment */
+      .ph {
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-slate-50 text-slate-800 antialiased font-sans overflow-hidden"
+  >
+    <div class="flex h-screen w-full">
+      <!-- Sidebar Container (Fixed Left) -->
+      <div
+        id="sidebar-container"
+        class="w-64 flex-shrink-0 fixed h-full z-20 bg-white border-r border-slate-200"
+      ></div>
+
+      <!-- Main Workspace -->
+      <div class="flex-1 ml-64 flex flex-col h-screen relative">
+        <!-- Topbar Container (Fixed Top) -->
+        <div
+          id="topbar-container"
+          class="fixed top-0 right-0 left-64 z-10 bg-white border-b border-slate-200 h-16"
+        ></div>
+
+        <!-- Main Dynamic Content Area -->
+        <main
+          id="main-content"
+          class="mt-16 p-6 overflow-y-auto h-[calc(100vh-4rem)]"
+        >
+          <!-- Pages load here dynamically -->
+        </main>
+      </div>
+    </div>
+
+    <!-- Main Logic -->
+    <script src="assets/js/role-toggle.js"></script>
+  </body>
+</html>

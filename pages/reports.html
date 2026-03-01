@@ -1,0 +1,352 @@
+<div class="max-w-7xl mx-auto space-y-8 pb-12">
+  <!-- Page Header & Global Actions -->
+  <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+    <div>
+      <h1 class="text-2xl font-bold text-slate-800 tracking-tight">
+        System Reports
+      </h1>
+      <p class="text-sm text-slate-500">
+        Statistical summaries and ownership analytics.
+      </p>
+    </div>
+
+    <!-- Action Buttons (Role Based) -->
+    <div class="flex flex-wrap items-center gap-2">
+      <!-- Staff & Admin: Print -->
+      <button
+        class="flex items-center gap-2 bg-white border border-slate-300 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm"
+        data-roles="staff admin"
+        onclick="window.print()"
+      >
+        <i class="ph ph-printer text-lg"></i>
+        <span>Print Report</span>
+      </button>
+
+      <!-- Admin: Export Excel -->
+      <button
+        class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors shadow-sm"
+        data-roles="admin"
+      >
+        <i class="ph ph-microsoft-excel-logo text-lg"></i>
+        <span>Export Excel</span>
+      </button>
+
+      <!-- Admin: Export PDF -->
+      <button
+        class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors shadow-sm"
+        data-roles="admin"
+      >
+        <i class="ph ph-file-pdf text-lg"></i>
+        <span>Export PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Report 1: Summary Cards (Active vs Archived) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- Card 1 -->
+    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">
+            Total Records
+          </p>
+          <h3 class="text-2xl font-bold text-slate-800 mt-1">14,205</h3>
+        </div>
+        <div class="p-2 bg-slate-100 rounded-lg text-slate-600">
+          <i class="ph ph-files text-xl"></i>
+        </div>
+      </div>
+      <div class="w-full bg-slate-100 rounded-full h-1.5 mb-2">
+        <div class="bg-slate-800 h-1.5 rounded-full" style="width: 100%"></div>
+      </div>
+      <p class="text-xs text-slate-500">Total registered declarations</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">
+            Active Status
+          </p>
+          <h3 class="text-2xl font-bold text-slate-800 mt-1">12,850</h3>
+        </div>
+        <div class="p-2 bg-slate-100 rounded-lg text-slate-600">
+          <i class="ph ph-check-circle text-xl"></i>
+        </div>
+      </div>
+      <div class="w-full bg-slate-100 rounded-full h-1.5 mb-2">
+        <div class="bg-slate-600 h-1.5 rounded-full" style="width: 90%"></div>
+      </div>
+      <p class="text-xs text-slate-500">90.4% of total records</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">
+            Archived
+          </p>
+          <h3 class="text-2xl font-bold text-slate-800 mt-1">1,355</h3>
+        </div>
+        <div class="p-2 bg-slate-100 rounded-lg text-slate-600">
+          <i class="ph ph-archive-box text-xl"></i>
+        </div>
+      </div>
+      <div class="w-full bg-slate-100 rounded-full h-1.5 mb-2">
+        <div class="bg-slate-400 h-1.5 rounded-full" style="width: 9.6%"></div>
+      </div>
+      <p class="text-xs text-slate-500">Cancelled or transferred</p>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">
+            Transfers (This Month)
+          </p>
+          <h3 class="text-2xl font-bold text-slate-800 mt-1">42</h3>
+        </div>
+        <div class="p-2 bg-slate-100 rounded-lg text-slate-600">
+          <i class="ph ph-arrows-left-right text-xl"></i>
+        </div>
+      </div>
+      <div class="w-full bg-slate-100 rounded-full h-1.5 mb-2">
+        <div class="bg-slate-800 h-1.5 rounded-full" style="width: 35%"></div>
+      </div>
+      <p class="text-xs text-slate-500">+12% vs last month</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- Report 2: Records per Barangay (Simulated Bar Chart) -->
+    <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
+          Records per Barangay
+        </h2>
+        <button class="text-slate-400 hover:text-slate-600">
+          <i class="ph ph-dots-three-vertical text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Simulated Chart -->
+      <div class="space-y-4">
+        <!-- Item 1 -->
+        <div>
+          <div
+            class="flex justify-between text-xs font-medium text-slate-600 mb-1"
+          >
+            <span>Poblacion</span>
+            <span class="font-bold">5,240 (37%)</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2.5">
+            <div
+              class="bg-slate-800 h-2.5 rounded-full"
+              style="width: 37%"
+            ></div>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div>
+          <div
+            class="flex justify-between text-xs font-medium text-slate-600 mb-1"
+          >
+            <span>San Jose</span>
+            <span class="font-bold">3,850 (27%)</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2.5">
+            <div
+              class="bg-slate-600 h-2.5 rounded-full"
+              style="width: 27%"
+            ></div>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div>
+          <div
+            class="flex justify-between text-xs font-medium text-slate-600 mb-1"
+          >
+            <span>Sta. Maria</span>
+            <span class="font-bold">2,110 (15%)</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2.5">
+            <div
+              class="bg-slate-500 h-2.5 rounded-full"
+              style="width: 15%"
+            ></div>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div>
+          <div
+            class="flex justify-between text-xs font-medium text-slate-600 mb-1"
+          >
+            <span>Burgos</span>
+            <span class="font-bold">1,890 (13%)</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2.5">
+            <div
+              class="bg-slate-400 h-2.5 rounded-full"
+              style="width: 13%"
+            ></div>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div>
+          <div
+            class="flex justify-between text-xs font-medium text-slate-600 mb-1"
+          >
+            <span>Others</span>
+            <span class="font-bold">1,115 (8%)</span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2.5">
+            <div
+              class="bg-slate-300 h-2.5 rounded-full"
+              style="width: 8%"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Report 3: Records per Classification (Stat Grid) -->
+    <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
+          Property Classification
+        </h2>
+        <i class="ph ph-chart-pie-slice text-slate-400 text-xl"></i>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Residential -->
+        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="h-2 w-2 rounded-full bg-slate-800"></div>
+            <p class="text-xs font-bold text-slate-500 uppercase">
+              Residential
+            </p>
+          </div>
+          <p class="text-2xl font-bold text-slate-800">8,420</p>
+          <p class="text-[0.65rem] text-slate-400">59% of total</p>
+        </div>
+
+        <!-- Agricultural -->
+        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="h-2 w-2 rounded-full bg-slate-600"></div>
+            <p class="text-xs font-bold text-slate-500 uppercase">
+              Agricultural
+            </p>
+          </div>
+          <p class="text-2xl font-bold text-slate-800">4,100</p>
+          <p class="text-[0.65rem] text-slate-400">29% of total</p>
+        </div>
+
+        <!-- Commercial -->
+        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="h-2 w-2 rounded-full bg-slate-400"></div>
+            <p class="text-xs font-bold text-slate-500 uppercase">Commercial</p>
+          </div>
+          <p class="text-2xl font-bold text-slate-800">1,250</p>
+          <p class="text-[0.65rem] text-slate-400">9% of total</p>
+        </div>
+
+        <!-- Industrial/Special -->
+        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
+          <div class="flex items-center gap-2 mb-2">
+            <div class="h-2 w-2 rounded-full bg-slate-300"></div>
+            <p class="text-xs font-bold text-slate-500 uppercase">
+              Ind / Special
+            </p>
+          </div>
+          <p class="text-2xl font-bold text-slate-800">435</p>
+          <p class="text-[0.65rem] text-slate-400">3% of total</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Report 4: Transfer Summary (Data Table) -->
+  <div
+    class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
+  >
+    <div
+      class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+    >
+      <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
+        Transfer Summary Log
+      </h2>
+
+      <!-- Inline Filters -->
+      <div class="flex gap-2">
+        <select
+          class="bg-white border border-slate-300 text-slate-700 text-xs rounded-lg p-2 focus:ring-slate-500 outline-none"
+        >
+          <option>Year: 2025</option>
+          <option>Year: 2024</option>
+        </select>
+        <select
+          class="bg-white border border-slate-300 text-slate-700 text-xs rounded-lg p-2 focus:ring-slate-500 outline-none"
+        >
+          <option>All Months</option>
+          <option>October</option>
+          <option>September</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-left text-sm text-slate-600">
+        <thead
+          class="bg-white text-xs text-slate-400 uppercase font-semibold border-b border-slate-100"
+        >
+          <tr>
+            <th class="px-6 py-3">Month</th>
+            <th class="px-6 py-3">Poblacion</th>
+            <th class="px-6 py-3">San Jose</th>
+            <th class="px-6 py-3">Sta. Maria</th>
+            <th class="px-6 py-3 text-right">Total Transfers</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-50">
+          <tr>
+            <td class="px-6 py-3 font-medium text-slate-800">October</td>
+            <td class="px-6 py-3">12</td>
+            <td class="px-6 py-3">8</td>
+            <td class="px-6 py-3">4</td>
+            <td class="px-6 py-3 text-right font-bold">24</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-3 font-medium text-slate-800">September</td>
+            <td class="px-6 py-3">15</td>
+            <td class="px-6 py-3">10</td>
+            <td class="px-6 py-3">2</td>
+            <td class="px-6 py-3 text-right font-bold">27</td>
+          </tr>
+          <tr>
+            <td class="px-6 py-3 font-medium text-slate-800">August</td>
+            <td class="px-6 py-3">9</td>
+            <td class="px-6 py-3">6</td>
+            <td class="px-6 py-3">5</td>
+            <td class="px-6 py-3 text-right font-bold">20</td>
+          </tr>
+          <tr
+            class="bg-slate-50 font-bold text-slate-800 border-t border-slate-200"
+          >
+            <td class="px-6 py-3">Q3 Total</td>
+            <td class="px-6 py-3">36</td>
+            <td class="px-6 py-3">24</td>
+            <td class="px-6 py-3">11</td>
+            <td class="px-6 py-3 text-right">71</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

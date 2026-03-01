@@ -1,0 +1,198 @@
+<div class="flex flex-col h-full">
+  <!-- Brand / Logo -->
+  <div class="h-16 flex items-center px-6 border-b border-slate-200 bg-white">
+    <div class="flex items-center gap-3">
+      <div class="bg-slate-900 text-white p-1.5 rounded-lg">
+        <i class="ph ph-bank text-xl"></i>
+      </div>
+      <div>
+        <h1
+          class="text-xl font-bold tracking-tight text-slate-900 leading-none"
+        >
+          DORMS
+        </h1>
+        <p
+          class="text-[0.60rem] font-bold text-slate-500 uppercase tracking-widest mt-1"
+        >
+          Assessor's Office
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation List -->
+  <nav class="flex-1 overflow-y-auto py-6 px-3 space-y-1" id="sidebar-menu">
+    <p
+      class="px-3 text-xs font-bold text-slate-400 uppercase tracking-wider mb-3"
+    >
+      Main Menu
+    </p>
+
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/dashboard.html"
+      data-roles="viewer staff admin"
+    >
+      <i class="ph ph-squares-four text-xl mr-3 text-slate-900"></i>
+      Dashboard
+    </a>
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/records.html"
+      data-roles="viewer staff admin"
+    >
+      <i
+        class="ph ph-folder-open text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+      ></i>
+      Records
+    </a>
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/add-record.html"
+      data-roles="staff admin"
+    >
+      <i
+        class="ph ph-plus-circle text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+      ></i>
+      Add Record
+    </a>
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/scan-index-card.html"
+      data-roles="staff admin"
+    >
+      <i
+        class="ph ph-scan text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+      ></i>
+      Scan Index Card
+    </a>
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/transfer-history.html"
+      data-roles="viewer staff admin"
+    >
+      <i
+        class="ph ph-arrows-left-right text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+      ></i>
+      Transfer History
+    </a>
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/documents.html"
+      data-roles="viewer staff admin"
+    >
+      <i
+        class="ph ph-files text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+      ></i>
+      Documents
+    </a>
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/reports.html"
+      data-roles="viewer staff admin"
+    >
+      <i
+        class="ph ph-chart-line-up text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+      ></i>
+      Reports
+    </a>
+
+    <p
+      class="sidebar-item px-3 text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 mt-8"
+      data-roles="staff admin"
+    >
+      Management
+    </p>
+
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/user-management.html"
+      data-roles="admin"
+    >
+      <i
+        class="ph ph-users text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+      ></i>
+      User Management
+    </a>
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/activity-logs-own.html"
+      data-roles="staff"
+    >
+      <i
+        class="ph ph-clipboard-text text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+      ></i>
+      Activity Logs (Own)
+    </a>
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/activity-logs-all.html"
+      data-roles="admin"
+    >
+      <i
+        class="ph ph-clipboard-text text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+      ></i>
+      Activity Logs (All)
+    </a>
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/backup-restore.html"
+      data-roles="admin"
+    >
+      <i
+        class="ph ph-hard-drives text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+      ></i>
+      Backup & Restore
+    </a>
+    <a
+      href="#"
+      class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+      data-page="pages/system-settings.html"
+      data-roles="admin"
+    >
+      <i
+        class="ph ph-gear text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+      ></i>
+      System Settings
+    </a>
+
+    <div class="mt-auto border-t border-slate-200 pt-4 pb-6">
+      <p
+        class="px-3 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2"
+      >
+        Account
+      </p>
+      <a
+        href="#"
+        class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors group"
+        data-roles="viewer staff admin"
+      >
+        <i
+          class="ph ph-lock-key text-xl mr-3 text-slate-500 group-hover:text-slate-900"
+        ></i>
+        Change Password
+      </a>
+      <a
+        href="#"
+        class="sidebar-item flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-red-600 hover:bg-red-50 transition-colors group"
+        data-roles="viewer staff admin"
+      >
+        <i
+          class="ph ph-sign-out text-xl mr-3 text-red-500 group-hover:text-red-700"
+        ></i>
+        Logout
+      </a>
+    </div>
+  </nav>
+</div>
