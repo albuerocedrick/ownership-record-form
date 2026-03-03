@@ -1,11 +1,11 @@
-<div class="max-w-7xl mx-auto space-y-8 pb-12">
+<div class="max-w-7xl mx-auto space-y-8 pb-12 animate-fade-in">
   <!-- Page Header & Global Actions -->
   <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
     <div>
-      <h1 class="text-2xl font-bold text-slate-800 tracking-tight">
+      <h1 class="text-3xl font-bold text-gray-900 tracking-tight">
         System Reports
       </h1>
-      <p class="text-sm text-slate-500">
+      <p class="text-sm text-gray-500 mt-1">
         Statistical summaries and ownership analytics.
       </p>
     </div>
@@ -14,7 +14,7 @@
     <div class="flex flex-wrap items-center gap-2">
       <!-- Staff & Admin: Print -->
       <button
-        class="flex items-center gap-2 bg-white border border-slate-300 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm"
+        class="flex items-center gap-2 bg-white border border-gray-200 text-gray-700 px-5 py-2.5 rounded-2xl text-sm font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all-smooth shadow-sm"
         data-roles="staff admin"
         onclick="window.print()"
       >
@@ -24,7 +24,7 @@
 
       <!-- Admin: Export Excel -->
       <button
-        class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors shadow-sm"
+        class="flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-2xl text-sm font-semibold hover:bg-gray-800 transition-all-smooth hover:shadow-lg hover:shadow-gray-900/20"
         data-roles="admin"
       >
         <i class="ph ph-microsoft-excel-logo text-lg"></i>
@@ -33,7 +33,7 @@
 
       <!-- Admin: Export PDF -->
       <button
-        class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors shadow-sm"
+        class="flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-2xl text-sm font-semibold hover:bg-gray-800 transition-all-smooth hover:shadow-lg hover:shadow-gray-900/20"
         data-roles="admin"
       >
         <i class="ph ph-file-pdf text-lg"></i>
@@ -43,92 +43,85 @@
   </div>
 
   <!-- Report 1: Summary Cards (Active vs Archived) -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
     <!-- Card 1 -->
-    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+    <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover-card">
       <div class="flex justify-between items-start mb-4">
         <div>
-          <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">
-            Total Records
-          </p>
-          <h3 class="text-2xl font-bold text-slate-800 mt-1">14,205</h3>
+          <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Total Records</p>
+          <h3 class="text-3xl font-bold text-gray-900 mt-1">14,205</h3>
         </div>
-        <div class="p-2 bg-slate-100 rounded-lg text-slate-600">
-          <i class="ph ph-files text-xl"></i>
+        <div class="h-12 w-12 bg-gray-100 rounded-2xl flex items-center justify-center">
+          <i class="ph ph-files text-2xl text-gray-700"></i>
         </div>
       </div>
-      <div class="w-full bg-slate-100 rounded-full h-1.5 mb-2">
-        <div class="bg-slate-800 h-1.5 rounded-full" style="width: 100%"></div>
+      <div class="w-full bg-gray-100 rounded-full h-2 mb-2">
+        <div class="bg-gray-800 h-2 rounded-full" style="width: 100%"></div>
       </div>
-      <p class="text-xs text-slate-500">Total registered declarations</p>
+      <p class="text-xs text-gray-500">Total registered declarations</p>
     </div>
 
     <!-- Card 2 -->
-    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+    <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover-card">
       <div class="flex justify-between items-start mb-4">
         <div>
-          <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">
-            Active Status
-          </p>
-          <h3 class="text-2xl font-bold text-slate-800 mt-1">12,850</h3>
+          <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Active Status</p>
+          <h3 class="text-3xl font-bold text-gray-900 mt-1">12,850</h3>
         </div>
-        <div class="p-2 bg-slate-100 rounded-lg text-slate-600">
-          <i class="ph ph-check-circle text-xl"></i>
+        <div class="h-12 w-12 bg-gray-50 rounded-2xl flex items-center justify-center">
+          <i class="ph ph-check-circle text-2xl text-gray-600"></i>
         </div>
       </div>
-      <div class="w-full bg-slate-100 rounded-full h-1.5 mb-2">
-        <div class="bg-slate-600 h-1.5 rounded-full" style="width: 90%"></div>
+      <div class="w-full bg-gray-100 rounded-full h-2 mb-2">
+        <div class="bg-gray-500 h-2 rounded-full" style="width: 90%"></div>
       </div>
-      <p class="text-xs text-slate-500">90.4% of total records</p>
+      <p class="text-xs text-gray-500">90.4% of total records</p>
     </div>
 
     <!-- Card 3 -->
-    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+    <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover-card">
       <div class="flex justify-between items-start mb-4">
         <div>
-          <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">
-            Archived
-          </p>
-          <h3 class="text-2xl font-bold text-slate-800 mt-1">1,355</h3>
+          <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Archived</p>
+          <h3 class="text-3xl font-bold text-gray-900 mt-1">1,355</h3>
         </div>
-        <div class="p-2 bg-slate-100 rounded-lg text-slate-600">
-          <i class="ph ph-archive-box text-xl"></i>
+        <div class="h-12 w-12 bg-gray-100 rounded-2xl flex items-center justify-center">
+          <i class="ph ph-archive text-2xl text-gray-700"></i>
         </div>
       </div>
-      <div class="w-full bg-slate-100 rounded-full h-1.5 mb-2">
-        <div class="bg-slate-400 h-1.5 rounded-full" style="width: 9.6%"></div>
+      <div class="w-full bg-gray-100 rounded-full h-2 mb-2">
+        <div class="bg-gray-400 h-2 rounded-full" style="width: 9.6%"></div>
       </div>
-      <p class="text-xs text-slate-500">Cancelled or transferred</p>
+      <p class="text-xs text-gray-500">Cancelled or transferred</p>
     </div>
 
     <!-- Card 4 -->
-    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+    <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover-card">
       <div class="flex justify-between items-start mb-4">
         <div>
-          <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">
-            Transfers (This Month)
-          </p>
-          <h3 class="text-2xl font-bold text-slate-800 mt-1">42</h3>
+          <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Transfers (This Month)</p>
+          <h3 class="text-3xl font-bold text-gray-900 mt-1">42</h3>
         </div>
-        <div class="p-2 bg-slate-100 rounded-lg text-slate-600">
-          <i class="ph ph-arrows-left-right text-xl"></i>
+        <div class="h-12 w-12 bg-gray-100 rounded-2xl flex items-center justify-center">
+          <i class="ph ph-arrows-left-right text-2xl text-gray-700"></i>
         </div>
       </div>
-      <div class="w-full bg-slate-100 rounded-full h-1.5 mb-2">
-        <div class="bg-slate-800 h-1.5 rounded-full" style="width: 35%"></div>
+      <div class="w-full bg-gray-100 rounded-full h-2 mb-2">
+        <div class="bg-gray-800 h-2 rounded-full" style="width: 35%"></div>
       </div>
-      <p class="text-xs text-slate-500">+12% vs last month</p>
+      <p class="text-xs text-gray-500">+12% vs last month</p>
     </div>
   </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
     <!-- Report 2: Records per Barangay (Simulated Bar Chart) -->
-    <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 hover-card">
       <div class="flex items-center justify-between mb-6">
-        <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
+        <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+          <i class="ph ph-chart-bar text-gray-400"></i>
           Records per Barangay
         </h2>
-        <button class="text-slate-400 hover:text-slate-600">
+        <button class="text-gray-400 hover:text-gray-600 p-2 hover:bg-gray-100 rounded-xl transition-all-smooth">
           <i class="ph ph-dots-three-vertical text-xl"></i>
         </button>
       </div>
@@ -137,163 +130,125 @@
       <div class="space-y-4">
         <!-- Item 1 -->
         <div>
-          <div
-            class="flex justify-between text-xs font-medium text-slate-600 mb-1"
-          >
+          <div class="flex justify-between text-sm font-semibold text-gray-700 mb-2">
             <span>Poblacion</span>
-            <span class="font-bold">5,240 (37%)</span>
+            <span class="text-gray-900">5,240 (37%)</span>
           </div>
-          <div class="w-full bg-slate-100 rounded-full h-2.5">
-            <div
-              class="bg-slate-800 h-2.5 rounded-full"
-              style="width: 37%"
-            ></div>
+          <div class="w-full bg-gray-100 rounded-full h-2.5">
+            <div class="bg-gray-800 h-2.5 rounded-full transition-all duration-500" style="width: 37%"></div>
           </div>
         </div>
         <!-- Item 2 -->
         <div>
-          <div
-            class="flex justify-between text-xs font-medium text-slate-600 mb-1"
-          >
+          <div class="flex justify-between text-sm font-semibold text-gray-700 mb-2">
             <span>San Jose</span>
-            <span class="font-bold">3,850 (27%)</span>
+            <span class="text-gray-900">3,850 (27%)</span>
           </div>
-          <div class="w-full bg-slate-100 rounded-full h-2.5">
-            <div
-              class="bg-slate-600 h-2.5 rounded-full"
-              style="width: 27%"
-            ></div>
+          <div class="w-full bg-gray-100 rounded-full h-2.5">
+            <div class="bg-gray-600 h-2.5 rounded-full transition-all duration-500" style="width: 27%"></div>
           </div>
         </div>
         <!-- Item 3 -->
         <div>
-          <div
-            class="flex justify-between text-xs font-medium text-slate-600 mb-1"
-          >
+          <div class="flex justify-between text-sm font-semibold text-gray-700 mb-2">
             <span>Sta. Maria</span>
-            <span class="font-bold">2,110 (15%)</span>
+            <span class="text-gray-900">2,110 (15%)</span>
           </div>
-          <div class="w-full bg-slate-100 rounded-full h-2.5">
-            <div
-              class="bg-slate-500 h-2.5 rounded-full"
-              style="width: 15%"
-            ></div>
+          <div class="w-full bg-gray-100 rounded-full h-2.5">
+            <div class="bg-gray-500 h-2.5 rounded-full transition-all duration-500" style="width: 15%"></div>
           </div>
         </div>
         <!-- Item 4 -->
         <div>
-          <div
-            class="flex justify-between text-xs font-medium text-slate-600 mb-1"
-          >
+          <div class="flex justify-between text-sm font-semibold text-gray-700 mb-2">
             <span>Burgos</span>
-            <span class="font-bold">1,890 (13%)</span>
+            <span class="text-gray-900">1,890 (13%)</span>
           </div>
-          <div class="w-full bg-slate-100 rounded-full h-2.5">
-            <div
-              class="bg-slate-400 h-2.5 rounded-full"
-              style="width: 13%"
-            ></div>
+          <div class="w-full bg-gray-100 rounded-full h-2.5">
+            <div class="bg-gray-400 h-2.5 rounded-full transition-all duration-500" style="width: 13%"></div>
           </div>
         </div>
         <!-- Item 5 -->
         <div>
-          <div
-            class="flex justify-between text-xs font-medium text-slate-600 mb-1"
-          >
+          <div class="flex justify-between text-sm font-semibold text-gray-700 mb-2">
             <span>Others</span>
-            <span class="font-bold">1,115 (8%)</span>
+            <span class="text-gray-900">1,115 (8%)</span>
           </div>
-          <div class="w-full bg-slate-100 rounded-full h-2.5">
-            <div
-              class="bg-slate-300 h-2.5 rounded-full"
-              style="width: 8%"
-            ></div>
+          <div class="w-full bg-gray-100 rounded-full h-2.5">
+            <div class="bg-gray-300 h-2.5 rounded-full transition-all duration-500" style="width: 8%"></div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Report 3: Records per Classification (Stat Grid) -->
-    <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+    <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 hover-card">
       <div class="flex items-center justify-between mb-6">
-        <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
+        <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+          <i class="ph ph-chart-pie-slice text-gray-400"></i>
           Property Classification
         </h2>
-        <i class="ph ph-chart-pie-slice text-slate-400 text-xl"></i>
       </div>
 
       <div class="grid grid-cols-2 gap-4">
         <!-- Residential -->
-        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
-          <div class="flex items-center gap-2 mb-2">
-            <div class="h-2 w-2 rounded-full bg-slate-800"></div>
-            <p class="text-xs font-bold text-slate-500 uppercase">
-              Residential
-            </p>
+        <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-gray-100 transition-colors">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="h-2.5 w-2.5 rounded-full bg-gray-800"></div>
+            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Residential</p>
           </div>
-          <p class="text-2xl font-bold text-slate-800">8,420</p>
-          <p class="text-[0.65rem] text-slate-400">59% of total</p>
+          <p class="text-3xl font-bold text-gray-900">8,420</p>
+          <p class="text-xs text-gray-400 mt-1">59% of total</p>
         </div>
 
         <!-- Agricultural -->
-        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
-          <div class="flex items-center gap-2 mb-2">
-            <div class="h-2 w-2 rounded-full bg-slate-600"></div>
-            <p class="text-xs font-bold text-slate-500 uppercase">
-              Agricultural
-            </p>
+        <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-gray-100 transition-colors">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="h-2.5 w-2.5 rounded-full bg-gray-600"></div>
+            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Agricultural</p>
           </div>
-          <p class="text-2xl font-bold text-slate-800">4,100</p>
-          <p class="text-[0.65rem] text-slate-400">29% of total</p>
+          <p class="text-3xl font-bold text-gray-900">4,100</p>
+          <p class="text-xs text-gray-400 mt-1">29% of total</p>
         </div>
 
         <!-- Commercial -->
-        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
-          <div class="flex items-center gap-2 mb-2">
-            <div class="h-2 w-2 rounded-full bg-slate-400"></div>
-            <p class="text-xs font-bold text-slate-500 uppercase">Commercial</p>
+        <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-gray-100 transition-colors">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="h-2.5 w-2.5 rounded-full bg-gray-400"></div>
+            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Commercial</p>
           </div>
-          <p class="text-2xl font-bold text-slate-800">1,250</p>
-          <p class="text-[0.65rem] text-slate-400">9% of total</p>
+          <p class="text-3xl font-bold text-gray-900">1,250</p>
+          <p class="text-xs text-gray-400 mt-1">9% of total</p>
         </div>
 
         <!-- Industrial/Special -->
-        <div class="p-4 bg-slate-50 rounded-lg border border-slate-100">
-          <div class="flex items-center gap-2 mb-2">
-            <div class="h-2 w-2 rounded-full bg-slate-300"></div>
-            <p class="text-xs font-bold text-slate-500 uppercase">
-              Ind / Special
-            </p>
+        <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-gray-100 transition-colors">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="h-2.5 w-2.5 rounded-full bg-gray-300"></div>
+            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Ind / Special</p>
           </div>
-          <p class="text-2xl font-bold text-slate-800">435</p>
-          <p class="text-[0.65rem] text-slate-400">3% of total</p>
+          <p class="text-3xl font-bold text-gray-900">435</p>
+          <p class="text-xs text-gray-400 mt-1">3% of total</p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Report 4: Transfer Summary (Data Table) -->
-  <div
-    class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-  >
-    <div
-      class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
-    >
-      <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
+  <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+    <div class="bg-gray-50 px-6 py-5 border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+        <i class="ph ph-arrows-left-right text-gray-400"></i>
         Transfer Summary Log
       </h2>
 
       <!-- Inline Filters -->
       <div class="flex gap-2">
-        <select
-          class="bg-white border border-slate-300 text-slate-700 text-xs rounded-lg p-2 focus:ring-slate-500 outline-none"
-        >
+        <select class="bg-white border border-gray-200 text-gray-700 text-xs rounded-xl px-3 py-2 focus:ring-2 focus:ring-gray-200 outline-none font-medium">
           <option>Year: 2025</option>
           <option>Year: 2024</option>
         </select>
-        <select
-          class="bg-white border border-slate-300 text-slate-700 text-xs rounded-lg p-2 focus:ring-slate-500 outline-none"
-        >
+        <select class="bg-white border border-gray-200 text-gray-700 text-xs rounded-xl px-3 py-2 focus:ring-2 focus:ring-gray-200 outline-none font-medium">
           <option>All Months</option>
           <option>October</option>
           <option>September</option>
@@ -302,48 +257,44 @@
     </div>
 
     <div class="overflow-x-auto">
-      <table class="w-full text-left text-sm text-slate-600">
-        <thead
-          class="bg-white text-xs text-slate-400 uppercase font-semibold border-b border-slate-100"
-        >
+      <table class="w-full text-left text-sm">
+        <thead class="bg-white border-b border-gray-100">
           <tr>
-            <th class="px-6 py-3">Month</th>
-            <th class="px-6 py-3">Poblacion</th>
-            <th class="px-6 py-3">San Jose</th>
-            <th class="px-6 py-3">Sta. Maria</th>
-            <th class="px-6 py-3 text-right">Total Transfers</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Month</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Poblacion</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">San Jose</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Sta. Maria</th>
+            <th class="px-6 py-4 text-right text-xs font-bold text-gray-400 uppercase tracking-wider">Total Transfers</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-slate-50">
-          <tr>
-            <td class="px-6 py-3 font-medium text-slate-800">October</td>
-            <td class="px-6 py-3">12</td>
-            <td class="px-6 py-3">8</td>
-            <td class="px-6 py-3">4</td>
-            <td class="px-6 py-3 text-right font-bold">24</td>
+        <tbody class="divide-y divide-gray-50">
+          <tr class="hover:bg-gray-50/50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">October</td>
+            <td class="px-6 py-4 text-gray-600">12</td>
+            <td class="px-6 py-4 text-gray-600">8</td>
+            <td class="px-6 py-4 text-gray-600">4</td>
+            <td class="px-6 py-4 text-right font-bold text-gray-900">24</td>
           </tr>
-          <tr>
-            <td class="px-6 py-3 font-medium text-slate-800">September</td>
-            <td class="px-6 py-3">15</td>
-            <td class="px-6 py-3">10</td>
-            <td class="px-6 py-3">2</td>
-            <td class="px-6 py-3 text-right font-bold">27</td>
+          <tr class="hover:bg-gray-50/50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">September</td>
+            <td class="px-6 py-4 text-gray-600">15</td>
+            <td class="px-6 py-4 text-gray-600">10</td>
+            <td class="px-6 py-4 text-gray-600">2</td>
+            <td class="px-6 py-4 text-right font-bold text-gray-900">27</td>
           </tr>
-          <tr>
-            <td class="px-6 py-3 font-medium text-slate-800">August</td>
-            <td class="px-6 py-3">9</td>
-            <td class="px-6 py-3">6</td>
-            <td class="px-6 py-3">5</td>
-            <td class="px-6 py-3 text-right font-bold">20</td>
+          <tr class="hover:bg-gray-50/50 transition-colors">
+            <td class="px-6 py-4 font-semibold text-gray-900">August</td>
+            <td class="px-6 py-4 text-gray-600">9</td>
+            <td class="px-6 py-4 text-gray-600">6</td>
+            <td class="px-6 py-4 text-gray-600">5</td>
+            <td class="px-6 py-4 text-right font-bold text-gray-900">20</td>
           </tr>
-          <tr
-            class="bg-slate-50 font-bold text-slate-800 border-t border-slate-200"
-          >
-            <td class="px-6 py-3">Q3 Total</td>
-            <td class="px-6 py-3">36</td>
-            <td class="px-6 py-3">24</td>
-            <td class="px-6 py-3">11</td>
-            <td class="px-6 py-3 text-right">71</td>
+          <tr class="bg-gray-50 font-bold text-gray-900 border-t border-gray-200">
+            <td class="px-6 py-4">Q3 Total</td>
+            <td class="px-6 py-4">36</td>
+            <td class="px-6 py-4">24</td>
+            <td class="px-6 py-4">11</td>
+            <td class="px-6 py-4 text-right text-lg">71</td>
           </tr>
         </tbody>
       </table>

@@ -1,49 +1,36 @@
-<div class="max-w-5xl mx-auto space-y-6 pb-12">
+<div class="max-w-5xl mx-auto space-y-6 pb-12 animate-fade-in">
   <!-- Header & Navigation -->
   <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
     <div class="flex items-start gap-4">
       <!-- Back Button -->
-      <button
-        onclick="goBackToRecords()"
-        class="mt-1 p-2 bg-white border border-slate-300 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors shadow-sm"
-        title="Back to Records"
-      >
+      <button onclick="goBackToRecords()" 
+              class="mt-1 p-2.5 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 text-gray-600 transition-all-smooth shadow-sm hover:shadow-md" 
+              title="Back to Records">
         <i class="ph ph-arrow-left text-lg"></i>
       </button>
       <div>
         <div class="flex items-center gap-3">
-          <h1 class="text-2xl font-bold text-slate-900 tracking-tight">
-            TD-2025-001
-          </h1>
-          <span
-            class="px-2.5 py-1 rounded-full bg-slate-200 text-slate-800 text-[0.65rem] font-bold uppercase tracking-widest border border-slate-300"
-          >
-            Active Record
+          <h1 class="text-3xl font-bold text-gray-900 tracking-tight">TD-2025-001</h1>
+          <span class="px-3 py-1.5 rounded-full bg-green-50 text-green-700 text-xs font-bold uppercase tracking-wider border border-green-100">
+            <span class="h-1.5 w-1.5 rounded-full bg-green-500 inline-block mr-1"></span> Active Record
           </span>
         </div>
-        <p class="text-sm text-slate-500 mt-1 font-mono">
-          PIN: 001-02-003-04-001
-        </p>
+        <p class="text-sm text-gray-500 mt-1 font-mono">PIN: 001-02-003-04-001</p>
       </div>
     </div>
 
     <!-- Role-Based Action Buttons -->
     <div class="flex items-center gap-3">
       <!-- Staff & Admin: Edit Button -->
-      <button
-        data-roles="staff admin"
-        onclick="editRecordDetails()"
-        class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors shadow-sm"
-      >
+      <button data-roles="staff admin" onclick="editRecordDetails()" 
+              class="flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-2xl text-sm font-semibold hover:bg-gray-800 transition-all-smooth hover:shadow-lg hover:shadow-gray-900/20">
         <i class="ph ph-pencil-simple text-lg"></i>
         <span>Edit Record</span>
       </button>
 
       <!-- Admin: Restore / Advanced Options -->
-      <button
-        data-roles="admin"
-        class="flex items-center gap-2 bg-white border border-slate-300 text-slate-800 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm"
-      >
+      <button data-roles="admin" 
+              class="flex items-center gap-2 bg-white border border-gray-200 text-gray-800 px-5 py-2.5 rounded-2xl text-sm font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all-smooth shadow-sm">
         <i class="ph ph-arrow-counter-clockwise text-lg"></i>
         <span>Restore Option</span>
       </button>
@@ -55,182 +42,112 @@
     <!-- Left Column (Wider - Primary Data) -->
     <div class="lg:col-span-2 space-y-6">
       <!-- Section: Property Information -->
-      <div
-        class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-      >
-        <div
-          class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between"
-        >
-          <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
-            Property Information
-          </h2>
-          <i class="ph ph-map-pin text-slate-400 text-lg"></i>
+      <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+        <div class="bg-gray-50 px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Property Information</h2>
+          <div class="h-8 w-8 bg-gray-100 rounded-xl flex items-center justify-center">
+            <i class="ph ph-map-pin text-gray-400 text-lg"></i>
+          </div>
         </div>
         <div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
-            <p
-              class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1"
-            >
-              Location / Address
-            </p>
-            <p class="text-sm font-medium text-slate-800">
-              Lot 42 Block 3, Brgy. Poblacion
-            </p>
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Location / Address</p>
+            <p class="text-sm font-semibold text-gray-900">Lot 42 Block 3, Brgy. Poblacion</p>
           </div>
           <div>
-            <p
-              class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1"
-            >
-              Title Number (OCT/TCT)
-            </p>
-            <p class="text-sm font-medium text-slate-800">TCT-123456</p>
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Title Number (OCT/TCT)</p>
+            <p class="text-sm font-semibold text-gray-900">TCT-123456</p>
           </div>
           <div>
-            <p
-              class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1"
-            >
-              Classification
-            </p>
-            <p class="text-sm font-medium text-slate-800">Residential</p>
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Classification</p>
+            <p class="text-sm font-semibold text-gray-900">Residential</p>
           </div>
           <div>
-            <p
-              class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1"
-            >
-              Area
-            </p>
-            <p class="text-sm font-medium text-slate-800">250.00 sq.m.</p>
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Area</p>
+            <p class="text-sm font-semibold text-gray-900">250.00 sq.m.</p>
           </div>
-          <div
-            class="sm:col-span-2 pt-4 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-4 gap-4"
-          >
+          <div class="sm:col-span-2 pt-4 border-t border-gray-100 grid grid-cols-2 sm:grid-cols-4 gap-4">
             <div>
-              <p class="text-[0.65rem] font-bold text-slate-400 uppercase mb-1">
-                North Boundary
-              </p>
-              <p class="text-xs text-slate-700">Lot 41 (R. Santos)</p>
+              <p class="text-[0.65rem] font-bold text-gray-400 uppercase mb-1">North Boundary</p>
+              <p class="text-xs text-gray-700">Lot 41 (R. Santos)</p>
             </div>
             <div>
-              <p class="text-[0.65rem] font-bold text-slate-400 uppercase mb-1">
-                South Boundary
-              </p>
-              <p class="text-xs text-slate-700">Municipal Road</p>
+              <p class="text-[0.65rem] font-bold text-gray-400 uppercase mb-1">South Boundary</p>
+              <p class="text-xs text-gray-700">Municipal Road</p>
             </div>
             <div>
-              <p class="text-[0.65rem] font-bold text-slate-400 uppercase mb-1">
-                East Boundary
-              </p>
-              <p class="text-xs text-slate-700">Lot 43 (M. Reyes)</p>
+              <p class="text-[0.65rem] font-bold text-gray-400 uppercase mb-1">East Boundary</p>
+              <p class="text-xs text-gray-700">Lot 43 (M. Reyes)</p>
             </div>
             <div>
-              <p class="text-[0.65rem] font-bold text-slate-400 uppercase mb-1">
-                West Boundary
-              </p>
-              <p class="text-xs text-slate-700">Creek</p>
+              <p class="text-[0.65rem] font-bold text-gray-400 uppercase mb-1">West Boundary</p>
+              <p class="text-xs text-gray-700">Creek</p>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Section: Owner Information -->
-      <div
-        class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-      >
-        <div
-          class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between"
-        >
-          <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
-            Owner Information
-          </h2>
-          <i class="ph ph-user text-slate-400 text-lg"></i>
+      <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+        <div class="bg-gray-50 px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Owner Information</h2>
+          <div class="h-8 w-8 bg-gray-100 rounded-xl flex items-center justify-center">
+            <i class="ph ph-user text-gray-400 text-lg"></i>
+          </div>
         </div>
         <div class="p-6">
           <div class="flex items-center gap-4 mb-6">
-            <div
-              class="h-14 w-14 rounded-full bg-slate-200 flex items-center justify-center text-lg font-bold text-slate-600 border border-slate-300"
-            >
+            <div class="h-14 w-14 rounded-full bg-gray-100 flex items-center justify-center text-lg font-bold text-gray-700 border border-gray-200">
               JD
             </div>
             <div>
-              <h3 class="text-lg font-bold text-slate-900">
-                Dela Cruz, Juan M.
-              </h3>
-              <p class="text-sm text-slate-500">Primary Owner</p>
+              <h3 class="text-lg font-bold text-gray-900">Dela Cruz, Juan M.</h3>
+              <p class="text-sm text-gray-500">Primary Owner</p>
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <p
-                class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1"
-              >
-                Mailing Address
-              </p>
-              <p class="text-sm font-medium text-slate-800">
-                123 Rizal St, Brgy. Poblacion
-              </p>
+              <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Mailing Address</p>
+              <p class="text-sm font-semibold text-gray-900">123 Rizal St, Brgy. Poblacion</p>
             </div>
             <div>
-              <p
-                class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1"
-              >
-                TIN
-              </p>
-              <p class="text-sm font-medium text-slate-800 font-mono">
-                123-456-789-000
-              </p>
+              <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">TIN</p>
+              <p class="text-sm font-semibold text-gray-900 font-mono">123-456-789-000</p>
             </div>
             <div>
-              <p
-                class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-1"
-              >
-                Contact Number
-              </p>
-              <p class="text-sm font-medium text-slate-800">+63 912 345 6789</p>
+              <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Contact Number</p>
+              <p class="text-sm font-semibold text-gray-900">+63 912 345 6789</p>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Section: Transfer History -->
-      <div
-        class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-      >
-        <div
-          class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between"
-        >
-          <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
-            Transfer History
-          </h2>
-          <i class="ph ph-arrows-left-right text-slate-400 text-lg"></i>
+      <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+        <div class="bg-gray-50 px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Transfer History</h2>
+          <div class="h-8 w-8 bg-gray-100 rounded-xl flex items-center justify-center">
+            <i class="ph ph-arrows-left-right text-gray-400 text-lg"></i>
+          </div>
         </div>
         <div class="p-0">
-          <table class="w-full text-left text-sm text-slate-600">
-            <thead
-              class="bg-slate-50 text-xs text-slate-400 uppercase font-semibold border-b border-slate-100"
-            >
+          <table class="w-full text-left text-sm">
+            <thead class="bg-gray-50 text-xs text-gray-400 uppercase font-semibold border-b border-gray-100">
               <tr>
                 <th class="px-6 py-3">Date</th>
                 <th class="px-6 py-3">Previous Owner</th>
                 <th class="px-6 py-3">Remarks / Mode</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-slate-100">
-              <tr>
-                <td class="px-6 py-4 text-xs font-mono text-slate-500">
-                  Oct 24, 2025
-                </td>
-                <td class="px-6 py-4 font-medium text-slate-800">
-                  Santos, Ricardo L.
-                </td>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="hover:bg-gray-50/50 transition-colors">
+                <td class="px-6 py-4 text-xs font-mono text-gray-500">Oct 24, 2025</td>
+                <td class="px-6 py-4 font-semibold text-gray-900">Santos, Ricardo L.</td>
                 <td class="px-6 py-4 text-xs">Deed of Absolute Sale</td>
               </tr>
-              <tr>
-                <td class="px-6 py-4 text-xs font-mono text-slate-500">
-                  Jan 15, 2010
-                </td>
-                <td class="px-6 py-4 font-medium text-slate-800">
-                  Reyes, Maria P.
-                </td>
+              <tr class="hover:bg-gray-50/50 transition-colors">
+                <td class="px-6 py-4 text-xs font-mono text-gray-500">Jan 15, 2010</td>
+                <td class="px-6 py-4 font-semibold text-gray-900">Reyes, Maria P.</td>
                 <td class="px-6 py-4 text-xs">Donation</td>
               </tr>
             </tbody>
@@ -242,105 +159,68 @@
     <!-- Right Column (Sidebar - Meta Data) -->
     <div class="space-y-6">
       <!-- Section: Attached Documents -->
-      <div
-        class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-      >
-        <div
-          class="bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between"
-        >
-          <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
-            Documents
-          </h2>
-          <i class="ph ph-files text-slate-400 text-lg"></i>
+      <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+        <div class="bg-gray-50 px-5 py-4 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Documents</h2>
+          <div class="h-8 w-8 bg-gray-100 rounded-xl flex items-center justify-center">
+            <i class="ph ph-files text-gray-400 text-lg"></i>
+          </div>
         </div>
         <div class="p-5 space-y-3">
           <!-- Document 1 -->
-          <div
-            class="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer"
-          >
-            <div class="p-2 bg-slate-100 rounded text-slate-600">
+          <div class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group">
+            <div class="h-10 w-10 bg-red-50 rounded-xl flex items-center justify-center text-red-600 border border-red-100">
               <i class="ph ph-file-pdf text-xl"></i>
             </div>
             <div class="flex-1">
-              <p class="text-sm font-bold text-slate-800 leading-tight">
-                Deed_of_Sale.pdf
-              </p>
-              <p class="text-xs text-slate-400">2.4 MB • Oct 24, 2025</p>
+              <p class="text-sm font-semibold text-gray-900 leading-tight">Deed_of_Sale.pdf</p>
+              <p class="text-xs text-gray-400">2.4 MB • Oct 24, 2025</p>
             </div>
-            <i
-              class="ph ph-download-simple text-slate-400 hover:text-slate-800"
-            ></i>
+            <i class="ph ph-download-simple text-gray-400 group-hover:text-gray-900 transition-colors"></i>
           </div>
           <!-- Document 2 -->
-          <div
-            class="flex items-center gap-3 p-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer"
-          >
-            <div class="p-2 bg-slate-100 rounded text-slate-600">
+          <div class="flex items-center gap-3 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group">
+            <div class="h-10 w-10 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 border border-purple-100">
               <i class="ph ph-image text-xl"></i>
             </div>
             <div class="flex-1">
-              <p class="text-sm font-bold text-slate-800 leading-tight">
-                Index_Card_Scan.jpg
-              </p>
-              <p class="text-xs text-slate-400">1.1 MB • Oct 24, 2025</p>
+              <p class="text-sm font-semibold text-gray-900 leading-tight">Index_Card_Scan.jpg</p>
+              <p class="text-xs text-gray-400">1.1 MB • Oct 24, 2025</p>
             </div>
-            <i
-              class="ph ph-download-simple text-slate-400 hover:text-slate-800"
-            ></i>
+            <i class="ph ph-download-simple text-gray-400 group-hover:text-gray-900 transition-colors"></i>
           </div>
         </div>
       </div>
 
       <!-- Section: Activity Log (Role-Based Visibility) -->
-      <div
-        data-roles="staff admin"
-        class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-      >
-        <div
-          class="bg-slate-50 px-5 py-4 border-b border-slate-200 flex items-center justify-between"
-        >
-          <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
-            Activity Log
-          </h2>
-          <i class="ph ph-clock-counter-clockwise text-slate-400 text-lg"></i>
+      <div data-roles="staff admin" class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+        <div class="bg-gray-50 px-5 py-4 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Activity Log</h2>
+          <div class="h-8 w-8 bg-gray-100 rounded-xl flex items-center justify-center">
+            <i class="ph ph-clock-counter-clockwise text-gray-400 text-lg"></i>
+          </div>
         </div>
         <div class="p-5">
-          <div class="relative border-l border-slate-200 ml-3 space-y-6">
+          <div class="relative border-l border-gray-200 ml-3 space-y-6">
             <div class="relative pl-6">
-              <span
-                class="absolute -left-1.5 top-1 h-3 w-3 rounded-full bg-slate-800 border-2 border-white"
-              ></span>
-              <p class="text-xs text-slate-400 font-mono mb-0.5">
-                Today, 09:41 AM
-              </p>
-              <p class="text-sm text-slate-800 font-medium">Record viewed</p>
-              <p class="text-xs text-slate-500">By System Admin</p>
+              <span class="absolute -left-1.5 top-1 h-3 w-3 rounded-full bg-gray-900 border-2 border-white"></span>
+              <p class="text-xs text-gray-400 font-mono mb-0.5">Today, 09:41 AM</p>
+              <p class="text-sm text-gray-900 font-semibold">Record viewed</p>
+              <p class="text-xs text-gray-500">By System Admin</p>
             </div>
 
             <div class="relative pl-6">
-              <span
-                class="absolute -left-1.5 top-1 h-3 w-3 rounded-full bg-slate-300 border-2 border-white"
-              ></span>
-              <p class="text-xs text-slate-400 font-mono mb-0.5">
-                Oct 24, 2025, 02:30 PM
-              </p>
-              <p class="text-sm text-slate-800 font-medium">
-                Ownership Transferred
-              </p>
-              <p class="text-xs text-slate-500">Processed by Assessor I</p>
+              <span class="absolute -left-1.5 top-1 h-3 w-3 rounded-full bg-gray-300 border-2 border-white"></span>
+              <p class="text-xs text-gray-400 font-mono mb-0.5">Oct 24, 2025, 02:30 PM</p>
+              <p class="text-sm text-gray-900 font-semibold">Ownership Transferred</p>
+              <p class="text-xs text-gray-500">Processed by Assessor I</p>
             </div>
 
             <div class="relative pl-6">
-              <span
-                class="absolute -left-1.5 top-1 h-3 w-3 rounded-full bg-slate-300 border-2 border-white"
-              ></span>
-              <p class="text-xs text-slate-400 font-mono mb-0.5">
-                Oct 24, 2025, 02:15 PM
-              </p>
-              <p class="text-sm text-slate-800 font-medium">
-                Index card scanned
-              </p>
-              <p class="text-xs text-slate-500">System Auto-entry</p>
+              <span class="absolute -left-1.5 top-1 h-3 w-3 rounded-full bg-gray-300 border-2 border-white"></span>
+              <p class="text-xs text-gray-400 font-mono mb-0.5">Oct 24, 2025, 02:15 PM</p>
+              <p class="text-sm text-gray-900 font-semibold">Index card scanned</p>
+              <p class="text-xs text-gray-500">System Auto-entry</p>
             </div>
           </div>
         </div>

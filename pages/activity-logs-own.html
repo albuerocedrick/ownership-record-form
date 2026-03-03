@@ -1,105 +1,85 @@
-<div class="max-w-7xl mx-auto space-y-6 pb-12">
+<div class="max-w-7xl mx-auto space-y-6 pb-12 animate-fade-in">
   <!-- Page Header -->
   <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
     <div>
-      <h1 class="text-2xl font-bold text-slate-800 tracking-tight">
+      <h1 class="text-3xl font-bold text-gray-900 tracking-tight">
         My Activity Logs
       </h1>
-      <p class="text-sm text-slate-500">
+      <p class="text-sm text-gray-500 mt-1">
         Track your recent actions, modifications, and document scans.
       </p>
     </div>
     <!-- Export Button -->
-    <button
-      class="flex items-center gap-2 bg-white border border-slate-300 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm"
-    >
+    <button class="flex items-center gap-2 bg-white border border-gray-200 text-gray-700 px-5 py-2.5 rounded-2xl text-sm font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all-smooth shadow-sm">
       <i class="ph ph-download-simple text-lg"></i>
       <span>Export My Logs</span>
     </button>
   </div>
 
   <!-- OCR Scan Logs Section (Dedicated) -->
-  <div
-    class="bg-slate-800 rounded-xl border border-slate-900 shadow-sm overflow-hidden text-white"
-  >
-    <div
-      class="px-6 py-4 border-b border-slate-700 flex items-center justify-between bg-slate-900/50"
-    >
+  <div class="bg-gray-900 rounded-3xl border border-gray-800 shadow-lg overflow-hidden text-white">
+    <div class="px-6 py-5 border-b border-gray-800 flex items-center justify-between bg-gray-900/50">
       <div class="flex items-center gap-2">
-        <i class="ph ph-scan text-xl text-slate-300"></i>
-        <h2 class="text-sm font-bold uppercase tracking-wide">
-          Recent OCR Scans
-        </h2>
+        <div class="h-8 w-8 bg-gray-800 rounded-xl flex items-center justify-center">
+          <i class="ph ph-scan text-lg text-gray-300"></i>
+        </div>
+        <h2 class="text-sm font-bold uppercase tracking-wide">Recent OCR Scans</h2>
       </div>
-      <span
-        class="text-xs font-mono bg-slate-700 px-2 py-1 rounded text-slate-300"
-        >Today: 12 Scans</span
-      >
+      <span class="text-xs font-mono bg-gray-800 px-3 py-1.5 rounded-lg text-gray-300">Today: 12 Scans</span>
     </div>
     <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Scan Item 1 -->
       <div class="flex items-start gap-3">
-        <div class="p-2 bg-slate-700 rounded-lg">
-          <i class="ph ph-image text-lg text-slate-300"></i>
+        <div class="h-10 w-10 bg-gray-800 rounded-xl flex items-center justify-center flex-shrink-0">
+          <i class="ph ph-image text-lg text-gray-300"></i>
         </div>
         <div>
           <p class="text-sm font-bold">Index_Card_001.jpg</p>
-          <p class="text-xs text-slate-400 mt-0.5">Matched: TD-2025-001</p>
-          <p class="text-[0.65rem] text-slate-500 font-mono mt-1">10:45 AM</p>
+          <p class="text-xs text-gray-400 mt-0.5">Matched: TD-2025-001</p>
+          <p class="text-[0.65rem] text-gray-500 font-mono mt-1">10:45 AM</p>
         </div>
       </div>
       <!-- Scan Item 2 -->
       <div class="flex items-start gap-3">
-        <div class="p-2 bg-slate-700 rounded-lg">
-          <i class="ph ph-file-text text-lg text-slate-300"></i>
+        <div class="h-10 w-10 bg-gray-800 rounded-xl flex items-center justify-center flex-shrink-0">
+          <i class="ph ph-file-text text-lg text-gray-300"></i>
         </div>
         <div>
           <p class="text-sm font-bold">TaxDec_Scan_B.pdf</p>
-          <p class="text-xs text-slate-400 mt-0.5">Processing Failed</p>
-          <p class="text-[0.65rem] text-slate-500 font-mono mt-1">09:30 AM</p>
+          <p class="text-xs text-gray-400 mt-0.5">Processing Failed</p>
+          <p class="text-[0.65rem] text-gray-500 font-mono mt-1">09:30 AM</p>
         </div>
       </div>
       <!-- Scan Item 3 -->
       <div class="flex items-start gap-3">
-        <div class="p-2 bg-slate-700 rounded-lg">
-          <i class="ph ph-image text-lg text-slate-300"></i>
+        <div class="h-10 w-10 bg-gray-800 rounded-xl flex items-center justify-center flex-shrink-0">
+          <i class="ph ph-image text-lg text-gray-300"></i>
         </div>
         <div>
           <p class="text-sm font-bold">Old_Title_1990.png</p>
-          <p class="text-xs text-slate-400 mt-0.5">Matched: TD-1990-552</p>
-          <p class="text-[0.65rem] text-slate-500 font-mono mt-1">09:15 AM</p>
+          <p class="text-xs text-gray-400 mt-0.5">Matched: TD-1990-552</p>
+          <p class="text-[0.65rem] text-gray-500 font-mono mt-1">09:15 AM</p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Main Filters -->
-  <div
-    class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row gap-4 justify-between items-center"
-  >
+  <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col sm:flex-row gap-4 justify-between items-center hover-card">
     <div class="relative w-full sm:w-1/3">
-      <i
-        class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"
-      ></i>
-      <input
-        type="text"
-        placeholder="Search Action or Record ID..."
-        class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-slate-400 bg-slate-50"
-      />
+      <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
+      <input type="text" placeholder="Search Action or Record ID..." 
+             class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth" />
     </div>
 
     <div class="flex gap-3 w-full sm:w-auto">
-      <select
-        class="appearance-none bg-slate-50 border border-slate-200 text-slate-700 py-2 pl-3 pr-8 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-slate-200 cursor-pointer w-full sm:w-40"
-      >
+      <select class="appearance-none bg-gray-50 border border-gray-200 text-gray-700 py-3 pl-4 pr-10 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer w-full sm:w-40 transition-all-smooth hover:border-gray-300">
         <option value="">All Actions</option>
         <option value="update">Updates</option>
         <option value="login">Logins</option>
         <option value="ocr">OCR Scans</option>
       </select>
-      <select
-        class="appearance-none bg-slate-50 border border-slate-200 text-slate-700 py-2 pl-3 pr-8 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-slate-200 cursor-pointer w-full sm:w-40"
-      >
+      <select class="appearance-none bg-gray-50 border border-gray-200 text-gray-700 py-3 pl-4 pr-10 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer w-full sm:w-40 transition-all-smooth hover:border-gray-300">
         <option value="">This Month</option>
         <option value="">Last Month</option>
       </select>
@@ -107,107 +87,83 @@
   </div>
 
   <!-- General Activity Table -->
-  <div
-    class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-  >
+  <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
     <div class="overflow-x-auto">
-      <table class="w-full text-left text-sm text-slate-600">
-        <thead
-          class="bg-slate-50 text-xs text-slate-500 uppercase font-semibold border-b border-slate-200"
-        >
+      <table class="w-full text-left text-sm">
+        <thead class="bg-gray-50 border-b border-gray-100">
           <tr>
-            <th class="px-6 py-4">User</th>
-            <th class="px-6 py-4">Action</th>
-            <th class="px-6 py-4">Record / Target</th>
-            <th class="px-6 py-4">Date & Time</th>
-            <th class="px-6 py-4 text-right">IP Address</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">User</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Action</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Record / Target</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Date & Time</th>
+            <th class="px-6 py-4 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">IP Address</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-slate-100">
+        <tbody class="divide-y divide-gray-100">
           <!-- Row 1 -->
-          <tr class="hover:bg-slate-50 transition-colors">
+          <tr class="hover:bg-gray-50/50 transition-colors">
             <td class="px-6 py-4">
               <div class="flex items-center gap-3">
-                <div
-                  class="h-8 w-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-600 border border-slate-300"
-                >
+                <div class="h-9 w-9 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-700 border border-gray-200">
                   JD
                 </div>
-                <span class="font-bold text-slate-800">Me (Staff)</span>
+                <span class="font-semibold text-gray-900">Me (Staff)</span>
               </div>
             </td>
             <td class="px-6 py-4">
-              <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium border border-slate-200"
-              >
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200">
                 <i class="ph ph-pencil-simple"></i> Updated Record
               </span>
             </td>
-            <td class="px-6 py-4 font-mono text-slate-700">TD-2025-001</td>
-            <td class="px-6 py-4 whitespace-nowrap text-xs text-slate-500">
-              Oct 24, 2025 <span class="text-slate-400 mx-1">•</span> 11:30 AM
+            <td class="px-6 py-4 font-mono text-gray-700">TD-2025-001</td>
+            <td class="px-6 py-4 whitespace-nowrap text-xs text-gray-500">
+              Oct 24, 2025 <span class="text-gray-300 mx-1">•</span> 11:30 AM
             </td>
-            <td class="px-6 py-4 text-right font-mono text-xs text-slate-400">
-              192.168.1.45
-            </td>
+            <td class="px-6 py-4 text-right font-mono text-xs text-gray-400">192.168.1.45</td>
           </tr>
 
           <!-- Row 2 -->
-          <tr class="hover:bg-slate-50 transition-colors">
+          <tr class="hover:bg-gray-50/50 transition-colors">
             <td class="px-6 py-4">
               <div class="flex items-center gap-3">
-                <div
-                  class="h-8 w-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-600 border border-slate-300"
-                >
+                <div class="h-9 w-9 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-700 border border-gray-200">
                   JD
                 </div>
-                <span class="font-bold text-slate-800">Me (Staff)</span>
+                <span class="font-semibold text-gray-900">Me (Staff)</span>
               </div>
             </td>
             <td class="px-6 py-4">
-              <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium border border-slate-200"
-              >
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200">
                 <i class="ph ph-scan"></i> OCR Process
               </span>
             </td>
-            <td class="px-6 py-4 font-mono text-slate-700">
-              Index_Card_001.jpg
+            <td class="px-6 py-4 font-mono text-gray-700">Index_Card_001.jpg</td>
+            <td class="px-6 py-4 whitespace-nowrap text-xs text-gray-500">
+              Oct 24, 2025 <span class="text-gray-300 mx-1">•</span> 10:45 AM
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-xs text-slate-500">
-              Oct 24, 2025 <span class="text-slate-400 mx-1">•</span> 10:45 AM
-            </td>
-            <td class="px-6 py-4 text-right font-mono text-xs text-slate-400">
-              192.168.1.45
-            </td>
+            <td class="px-6 py-4 text-right font-mono text-xs text-gray-400">192.168.1.45</td>
           </tr>
 
           <!-- Row 3 -->
-          <tr class="hover:bg-slate-50 transition-colors">
+          <tr class="hover:bg-gray-50/50 transition-colors">
             <td class="px-6 py-4">
               <div class="flex items-center gap-3">
-                <div
-                  class="h-8 w-8 rounded-full bg-slate-200 flex items-center justify-center text-xs font-bold text-slate-600 border border-slate-300"
-                >
+                <div class="h-9 w-9 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-700 border border-gray-200">
                   JD
                 </div>
-                <span class="font-bold text-slate-800">Me (Staff)</span>
+                <span class="font-semibold text-gray-900">Me (Staff)</span>
               </div>
             </td>
             <td class="px-6 py-4">
-              <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium border border-slate-200"
-              >
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200">
                 <i class="ph ph-sign-in"></i> System Login
               </span>
             </td>
-            <td class="px-6 py-4 font-mono text-slate-400">---</td>
-            <td class="px-6 py-4 whitespace-nowrap text-xs text-slate-500">
-              Oct 24, 2025 <span class="text-slate-400 mx-1">•</span> 08:00 AM
+            <td class="px-6 py-4 font-mono text-gray-400">---</td>
+            <td class="px-6 py-4 whitespace-nowrap text-xs text-gray-500">
+              Oct 24, 2025 <span class="text-gray-300 mx-1">•</span> 08:00 AM
             </td>
-            <td class="px-6 py-4 text-right font-mono text-xs text-slate-400">
-              192.168.1.45
-            </td>
+            <td class="px-6 py-4 text-right font-mono text-xs text-gray-400">192.168.1.45</td>
           </tr>
         </tbody>
       </table>

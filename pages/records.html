@@ -1,17 +1,17 @@
-<div class="max-w-7xl mx-auto space-y-6 pb-12">
+<div class="max-w-7xl mx-auto space-y-6 pb-12 animate-fade-in">
   <!-- Page Header -->
   <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
     <div>
-      <h1 class="text-2xl font-bold text-slate-800 tracking-tight">
+      <h1 class="text-3xl font-bold text-gray-900 tracking-tight">
         Property Records
       </h1>
-      <p class="text-sm text-slate-500">
+      <p class="text-sm text-gray-500 mt-1">
         Manage and view ownership declarations and tax declarations.
       </p>
     </div>
     <!-- Add Button (Visible to Staff/Admin only) -->
     <button
-      class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors shadow-sm"
+      class="flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-2xl text-sm font-semibold hover:bg-gray-800 transition-all-smooth hover:shadow-lg hover:shadow-gray-900/20"
       data-roles="staff admin"
     >
       <i class="ph ph-plus text-lg"></i>
@@ -20,18 +20,14 @@
   </div>
 
   <!-- Controls Toolbar -->
-  <div
-    class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col lg:flex-row gap-4 justify-between items-center"
-  >
+  <div class="bg-white p-5 rounded-3xl border border-gray-100 flex flex-col lg:flex-row gap-4 justify-between items-center hover-card">
     <!-- Search -->
     <div class="w-full lg:w-1/3 relative">
-      <i
-        class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"
-      ></i>
+      <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
       <input
         type="text"
         placeholder="Search Owner, TD Number, or PIN..."
-        class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent bg-slate-50"
+        class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-2xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth"
       />
     </div>
 
@@ -40,126 +36,106 @@
       <!-- Barangay Filter -->
       <div class="relative">
         <select
-          class="appearance-none w-full sm:w-40 bg-slate-50 border border-slate-200 text-slate-700 py-2 pl-3 pr-8 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-slate-200 cursor-pointer"
+          class="appearance-none w-full sm:w-40 bg-gray-50 border border-gray-200 text-gray-700 py-3 pl-4 pr-10 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer transition-all-smooth hover:border-gray-300"
         >
           <option value="">All Barangays</option>
           <option value="pob">Poblacion</option>
           <option value="sanjose">San Jose</option>
           <option value="stamaria">Sta. Maria</option>
         </select>
-        <i
-          class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-        ></i>
+        <i class="ph ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
       </div>
 
       <!-- Classification Filter -->
       <div class="relative">
         <select
-          class="appearance-none w-full sm:w-40 bg-slate-50 border border-slate-200 text-slate-700 py-2 pl-3 pr-8 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-slate-200 cursor-pointer"
+          class="appearance-none w-full sm:w-40 bg-gray-50 border border-gray-200 text-gray-700 py-3 pl-4 pr-10 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer transition-all-smooth hover:border-gray-300"
         >
           <option value="">Classification</option>
           <option value="res">Residential</option>
           <option value="com">Commercial</option>
           <option value="agri">Agricultural</option>
         </select>
-        <i
-          class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-        ></i>
+        <i class="ph ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
       </div>
 
       <!-- Status Filter -->
       <div class="relative">
         <select
-          class="appearance-none w-full sm:w-32 bg-slate-50 border border-slate-200 text-slate-700 py-2 pl-3 pr-8 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-slate-200 cursor-pointer"
+          class="appearance-none w-full sm:w-32 bg-gray-50 border border-gray-200 text-gray-700 py-3 pl-4 pr-10 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer transition-all-smooth hover:border-gray-300"
         >
           <option value="">Status</option>
           <option value="active">Active</option>
           <option value="archived">Archived</option>
           <option value="pending">Pending</option>
         </select>
-        <i
-          class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-        ></i>
+        <i class="ph ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
       </div>
 
-      <div class="h-8 w-px bg-slate-200 hidden sm:block"></div>
+      <div class="h-8 w-px bg-gray-200 hidden sm:block self-center"></div>
 
       <!-- Sort -->
       <div class="relative">
         <select
-          class="appearance-none w-full sm:w-32 bg-white border border-slate-200 text-slate-700 py-2 pl-3 pr-8 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-slate-200 cursor-pointer shadow-sm"
+          class="appearance-none w-full sm:w-36 bg-white border border-gray-200 text-gray-900 py-3 pl-4 pr-10 rounded-2xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer transition-all-smooth hover:border-gray-300 shadow-sm"
         >
           <option value="date_desc">Newest First</option>
           <option value="date_asc">Oldest First</option>
           <option value="az">A-Z Owner</option>
           <option value="td">TD Number</option>
         </select>
-        <i
-          class="ph ph-sort-ascending absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-        ></i>
+        <i class="ph ph-sort-ascending absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
       </div>
     </div>
   </div>
 
   <!-- Data Table -->
-  <div
-    class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-  >
+  <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden hover-card">
     <div class="overflow-x-auto">
-      <table class="w-full text-left text-sm text-slate-600">
-        <thead
-          class="bg-slate-50 text-xs text-slate-500 uppercase font-semibold border-b border-slate-200"
-        >
+      <table class="w-full text-left text-sm">
+        <thead class="bg-gray-50 border-b border-gray-100">
           <tr>
-            <th class="px-6 py-4 whitespace-nowrap">TD Number / PIN</th>
-            <th class="px-6 py-4">Owner Name</th>
-            <th class="px-6 py-4">Location</th>
-            <th class="px-6 py-4">Class</th>
-            <th class="px-6 py-4">Status</th>
-            <th class="px-6 py-4 whitespace-nowrap">Registered</th>
-            <th class="px-6 py-4 text-right">Actions</th>
+            <th class="px-6 py-4 whitespace-nowrap text-xs font-bold text-gray-500 uppercase tracking-wider">TD Number / PIN</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Owner Name</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Location</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Class</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Status</th>
+            <th class="px-6 py-4 whitespace-nowrap text-xs font-bold text-gray-500 uppercase tracking-wider">Registered</th>
+            <th class="px-6 py-4 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Actions</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-slate-100">
+        <tbody class="divide-y divide-gray-100">
           <!-- Row 1: Active Residential -->
-          <tr class="hover:bg-slate-50 transition-colors group">
+          <tr class="hover:bg-gray-50/50 transition-colors group">
             <td class="px-6 py-4 whitespace-nowrap">
-              <p class="font-mono font-medium text-slate-800">TD-2025-001</p>
-              <p class="text-[0.65rem] text-slate-400">
-                PIN: 001-02-003-04-001
-              </p>
+              <p class="font-mono font-semibold text-gray-900">TD-2025-001</p>
+              <p class="text-xs text-gray-400 mt-0.5">PIN: 001-02-003-04-001</p>
             </td>
             <td class="px-6 py-4">
               <div class="flex items-center gap-3">
-                <div
-                  class="h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-600 border border-slate-200"
-                >
+                <div class="h-9 w-9 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-700 border border-gray-200">
                   JD
                 </div>
-                <span class="font-bold text-slate-700">Dela Cruz, Juan</span>
+                <span class="font-semibold text-gray-900">Dela Cruz, Juan</span>
               </div>
             </td>
-            <td class="px-6 py-4">Brgy. Poblacion</td>
+            <td class="px-6 py-4 text-gray-600">Brgy. Poblacion</td>
             <td class="px-6 py-4">
-              <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium border border-slate-200"
-              >
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200">
                 <i class="ph ph-house"></i> Res
               </span>
             </td>
             <td class="px-6 py-4">
-              <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100"
-              >
-                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 text-green-700 text-xs font-bold border border-green-100">
+                <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span>
                 Active
               </span>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-xs">Oct 24, 2025</td>
+            <td class="px-6 py-4 whitespace-nowrap text-xs text-gray-500">Oct 24, 2025</td>
             <td class="px-6 py-4 text-right">
-              <div class="flex items-center justify-end gap-2">
+              <div class="flex items-center justify-end gap-1">
                 <button
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
+                  class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth"
                   title="View Details"
                   data-roles="viewer staff admin"
                   onclick="viewRecordDetails()"
@@ -167,7 +143,7 @@
                   <i class="ph ph-eye text-lg"></i>
                 </button>
                 <button
-                  class="p-1.5 text-slate-500 hover:text-orange-600 hover:bg-orange-50 rounded transition-colors"
+                  class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth"
                   title="Edit Record"
                   data-roles="staff admin"
                   onclick="editRecordDetails()"
@@ -175,7 +151,7 @@
                   <i class="ph ph-pencil-simple text-lg"></i>
                 </button>
                 <button
-                  class="p-1.5 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
+                  class="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all-smooth"
                   title="Archive"
                   data-roles="staff admin"
                 >
@@ -186,44 +162,36 @@
           </tr>
 
           <!-- Row 2: Active Commercial -->
-          <tr class="hover:bg-slate-50 transition-colors group">
+          <tr class="hover:bg-gray-50/50 transition-colors group">
             <td class="px-6 py-4 whitespace-nowrap">
-              <p class="font-mono font-medium text-slate-800">TD-2025-042</p>
-              <p class="text-[0.65rem] text-slate-400">
-                PIN: 005-01-112-00-015
-              </p>
+              <p class="font-mono font-semibold text-gray-900">TD-2025-042</p>
+              <p class="text-xs text-gray-400 mt-0.5">PIN: 005-01-112-00-015</p>
             </td>
             <td class="px-6 py-4">
               <div class="flex items-center gap-3">
-                <div
-                  class="h-8 w-8 rounded-full bg-indigo-50 flex items-center justify-center text-xs font-bold text-indigo-600 border border-indigo-100"
-                >
+                <div class="h-9 w-9 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-700 border border-gray-200">
                   SM
                 </div>
-                <span class="font-bold text-slate-700">SM Prime Holdings</span>
+                <span class="font-semibold text-gray-900">SM Prime Holdings</span>
               </div>
             </td>
-            <td class="px-6 py-4">Brgy. San Jose</td>
+            <td class="px-6 py-4 text-gray-600">Brgy. San Jose</td>
             <td class="px-6 py-4">
-              <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-medium border border-blue-100"
-              >
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200">
                 <i class="ph ph-buildings"></i> Com
               </span>
             </td>
             <td class="px-6 py-4">
-              <span
-                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-100"
-              >
-                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 text-green-700 text-xs font-bold border border-green-100">
+                <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span>
                 Active
               </span>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-xs">Sep 12, 2025</td>
+            <td class="px-6 py-4 whitespace-nowrap text-xs text-gray-500">Sep 12, 2025</td>
             <td class="px-6 py-4 text-right">
-              <div class="flex items-center justify-end gap-2">
+              <div class="flex items-center justify-end gap-1">
                 <button
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
+                  class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth"
                   title="View Details"
                   data-roles="viewer staff admin"
                   onclick="viewRecordDetails()"
@@ -231,7 +199,7 @@
                   <i class="ph ph-eye text-lg"></i>
                 </button>
                 <button
-                  class="p-1.5 text-slate-500 hover:text-orange-600 hover:bg-orange-50 rounded transition-colors"
+                  class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth"
                   title="Edit Record"
                   data-roles="staff admin"
                   onclick="editRecordDetails()"
@@ -239,7 +207,7 @@
                   <i class="ph ph-pencil-simple text-lg"></i>
                 </button>
                 <button
-                  class="p-1.5 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
+                  class="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all-smooth"
                   title="Archive"
                   data-roles="staff admin"
                 >
@@ -253,32 +221,22 @@
     </div>
 
     <!-- Pagination -->
-    <div
-      class="bg-slate-50 px-6 py-4 border-t border-slate-200 flex items-center justify-between"
-    >
-      <span class="text-xs text-slate-500"
-        >Showing <span class="font-bold text-slate-700">1-2</span> of
-        <span class="font-bold text-slate-700">14,205</span> records</span
-      >
-      <div class="flex space-x-1">
-        <button
-          class="px-3 py-1 rounded border border-slate-300 bg-white text-slate-600 text-xs hover:bg-slate-50 disabled:opacity-50"
-        >
+    <div class="bg-gray-50 px-6 py-4 border-t border-gray-100 flex items-center justify-between">
+      <span class="text-sm text-gray-500">
+        Showing <span class="font-semibold text-gray-900">1-2</span> of
+        <span class="font-semibold text-gray-900">14,205</span> records
+      </span>
+      <div class="flex space-x-2">
+        <button class="px-4 py-2 rounded-xl border border-gray-200 bg-white text-gray-600 text-sm font-medium hover:bg-gray-50 hover:border-gray-300 transition-all-smooth disabled:opacity-50">
           Prev
         </button>
-        <button
-          class="px-3 py-1 rounded border border-slate-300 bg-slate-800 text-white text-xs"
-        >
+        <button class="px-4 py-2 rounded-xl border border-gray-900 bg-gray-900 text-white text-sm font-medium">
           1
         </button>
-        <button
-          class="px-3 py-1 rounded border border-slate-300 bg-white text-slate-600 text-xs hover:bg-slate-50"
-        >
+        <button class="px-4 py-2 rounded-xl border border-gray-200 bg-white text-gray-600 text-sm font-medium hover:bg-gray-50 hover:border-gray-300 transition-all-smooth">
           2
         </button>
-        <button
-          class="px-3 py-1 rounded border border-slate-300 bg-white text-slate-600 text-xs hover:bg-slate-50"
-        >
+        <button class="px-4 py-2 rounded-xl border border-gray-200 bg-white text-gray-600 text-sm font-medium hover:bg-gray-50 hover:border-gray-300 transition-all-smooth">
           Next
         </button>
       </div>

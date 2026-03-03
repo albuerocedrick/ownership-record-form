@@ -1,22 +1,21 @@
-<div class="max-w-7xl mx-auto space-y-6 pb-12" data-roles="admin">
+<div class="max-w-7xl mx-auto space-y-6 pb-12 animate-fade-in" data-roles="admin">
   <!-- Page Header -->
   <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
     <div>
-      <h1 class="text-2xl font-bold text-slate-800 tracking-tight">
+      <h1 class="text-3xl font-bold text-gray-900 tracking-tight">
         Backup & Restore
       </h1>
-      <p class="text-sm text-slate-500">
+      <p class="text-sm text-gray-500 mt-1">
         Manage database redundancy, disaster recovery, and automated schedules.
       </p>
     </div>
     <!-- Quick Status Indicator -->
-    <div
-      class="flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-full border border-slate-200"
-    >
-      <div class="h-2 w-2 rounded-full bg-slate-800 animate-pulse"></div>
-      <span class="text-xs font-bold text-slate-600 uppercase tracking-wide"
-        >System Online</span
-      >
+    <div class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full border border-gray-200">
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+      </span>
+      <span class="text-xs font-bold text-gray-600 uppercase tracking-wide">System Online</span>
     </div>
   </div>
 
@@ -25,87 +24,58 @@
     <!-- Left Column: Manual Actions (2/3 width) -->
     <div class="lg:col-span-2 space-y-6">
       <!-- Section: Manual Backup -->
-      <div
-        class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-      >
-        <div
-          class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between"
-        >
-          <h2
-            class="text-sm font-bold text-slate-800 uppercase tracking-wide flex items-center gap-2"
-          >
-            <i class="ph ph-hard-drives text-lg"></i> Manual Backup
+      <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+        <div class="bg-gray-50 px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wide flex items-center gap-2">
+            <div class="h-8 w-8 bg-gray-100 rounded-xl flex items-center justify-center">
+              <i class="ph ph-hard-drives text-lg text-gray-600"></i>
+            </div>
+            Manual Backup
           </h2>
         </div>
         <div class="p-6">
-          <div
-            class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6"
-          >
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
-              <p class="text-sm font-medium text-slate-800">
-                Create Immediate Snapshot
-              </p>
-              <p class="text-xs text-slate-500 mt-1">
-                Generates a full SQL dump of the current database state.
-              </p>
+              <p class="text-sm font-semibold text-gray-900">Create Immediate Snapshot</p>
+              <p class="text-xs text-gray-500 mt-1">Generates a full SQL dump of the current database state.</p>
             </div>
-            <button
-              class="flex items-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors shadow-sm whitespace-nowrap"
-            >
+            <button class="flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-2xl text-sm font-semibold hover:bg-gray-800 transition-all-smooth hover:shadow-lg hover:shadow-gray-900/20 whitespace-nowrap">
               <i class="ph ph-download-simple text-lg"></i>
               <span>Backup Now</span>
             </button>
           </div>
 
           <!-- Recent Backups List -->
-          <div class="border-t border-slate-100 pt-4">
-            <p
-              class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3"
-            >
-              Available for Download
-            </p>
+          <div class="border-t border-gray-100 pt-4">
+            <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Available for Download</p>
             <div class="space-y-2">
               <!-- Backup Item 1 -->
-              <div
-                class="flex items-center justify-between p-3 border border-slate-200 rounded-lg bg-slate-50 hover:bg-white transition-colors group"
-              >
+              <div class="flex items-center justify-between p-4 border border-gray-200 rounded-2xl bg-gray-50 hover:bg-white transition-colors group hover-card">
                 <div class="flex items-center gap-3">
-                  <i class="ph ph-database text-slate-400 text-xl"></i>
+                  <div class="h-10 w-10 bg-gray-100 rounded-xl flex items-center justify-center">
+                    <i class="ph ph-database text-gray-400 text-xl"></i>
+                  </div>
                   <div>
-                    <p class="text-sm font-bold text-slate-700">
-                      dorms_backup_2026-03-01.sql
-                    </p>
-                    <p class="text-[0.65rem] text-slate-400 font-mono">
-                      145 MB • Created Today, 02:00 AM
-                    </p>
+                    <p class="text-sm font-semibold text-gray-900">dorms_backup_2026-03-01.sql</p>
+                    <p class="text-xs text-gray-400 font-mono">145 MB • Created Today, 02:00 AM</p>
                   </div>
                 </div>
-                <button
-                  class="text-slate-400 hover:text-slate-800 p-2"
-                  title="Download File"
-                >
+                <button class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth" title="Download File">
                   <i class="ph ph-download text-lg"></i>
                 </button>
               </div>
               <!-- Backup Item 2 -->
-              <div
-                class="flex items-center justify-between p-3 border border-slate-200 rounded-lg bg-slate-50 hover:bg-white transition-colors group"
-              >
+              <div class="flex items-center justify-between p-4 border border-gray-200 rounded-2xl bg-gray-50 hover:bg-white transition-colors group hover-card">
                 <div class="flex items-center gap-3">
-                  <i class="ph ph-database text-slate-400 text-xl"></i>
+                  <div class="h-10 w-10 bg-gray-100 rounded-xl flex items-center justify-center">
+                    <i class="ph ph-database text-gray-400 text-xl"></i>
+                  </div>
                   <div>
-                    <p class="text-sm font-bold text-slate-700">
-                      dorms_backup_2026-02-28.sql
-                    </p>
-                    <p class="text-[0.65rem] text-slate-400 font-mono">
-                      144 MB • Created Yesterday
-                    </p>
+                    <p class="text-sm font-semibold text-gray-900">dorms_backup_2026-02-28.sql</p>
+                    <p class="text-xs text-gray-400 font-mono">144 MB • Created Yesterday</p>
                   </div>
                 </div>
-                <button
-                  class="text-slate-400 hover:text-slate-800 p-2"
-                  title="Download File"
-                >
+                <button class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth" title="Download File">
                   <i class="ph ph-download text-lg"></i>
                 </button>
               </div>
@@ -115,59 +85,43 @@
       </div>
 
       <!-- Section: Restore -->
-      <div
-        class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-      >
-        <div
-          class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex items-center justify-between"
-        >
-          <h2
-            class="text-sm font-bold text-slate-800 uppercase tracking-wide flex items-center gap-2"
-          >
-            <i class="ph ph-arrow-counter-clockwise text-lg"></i> System Restore
+      <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+        <div class="bg-gray-50 px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+          <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wide flex items-center gap-2">
+            <div class="h-8 w-8 bg-gray-100 rounded-xl flex items-center justify-center">
+              <i class="ph ph-arrow-counter-clockwise text-lg text-gray-600"></i>
+            </div>
+            System Restore
           </h2>
         </div>
         <div class="p-6">
           <!-- Warning Notice -->
-          <div
-            class="bg-slate-100 border-l-4 border-slate-800 p-4 rounded-r-lg flex items-start gap-3 mb-6"
-          >
-            <i class="ph ph-warning-octagon text-slate-800 text-2xl mt-0.5"></i>
+          <div class="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-2xl flex items-start gap-3 mb-6 shadow-sm">
+            <div class="h-10 w-10 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="ph ph-warning-octagon text-red-600 text-xl"></i>
+            </div>
             <div>
-              <p class="text-sm font-bold text-slate-900">Critical Warning</p>
-              <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-                Restoring a backup will
-                <span
-                  class="font-bold underline decoration-slate-400 underline-offset-2"
-                  >permanently overwrite</span
-                >
-                all current data. This action cannot be undone. Ensure you have
-                backed up any recent changes before proceeding.
+              <p class="text-sm font-bold text-red-900">Critical Warning</p>
+              <p class="text-xs text-red-600 mt-1 leading-relaxed">
+                Restoring a backup will <span class="font-bold underline decoration-red-400 underline-offset-2">permanently overwrite</span> all current data. This action cannot be undone. Ensure you have backed up any recent changes before proceeding.
               </p>
             </div>
           </div>
 
           <div class="space-y-4">
             <div>
-              <label
-                class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
-                >Upload Backup File (.sql)</label
-              >
-              <div
-                class="border-2 border-dashed border-slate-300 rounded-lg p-8 flex flex-col items-center justify-center text-center hover:bg-slate-50 transition-colors cursor-pointer"
-              >
-                <i class="ph ph-upload-simple text-3xl text-slate-400 mb-2"></i>
-                <p class="text-sm font-medium text-slate-600">
-                  Click to upload or drag file here
-                </p>
-                <p class="text-xs text-slate-400 mt-1">Max file size: 500MB</p>
+              <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Upload Backup File (.sql)</label>
+              <div class="border-2 border-dashed border-gray-300 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:bg-gray-50 transition-colors cursor-pointer">
+                <div class="h-12 w-12 bg-gray-100 rounded-2xl flex items-center justify-center mb-3">
+                  <i class="ph ph-upload-simple text-2xl text-gray-400"></i>
+                </div>
+                <p class="text-sm font-semibold text-gray-700">Click to upload or drag file here</p>
+                <p class="text-xs text-gray-400 mt-1">Max file size: 500MB</p>
               </div>
             </div>
 
             <div class="flex justify-end pt-2">
-              <button
-                class="flex items-center gap-2 bg-white border border-slate-300 text-slate-700 px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
-              >
+              <button class="flex items-center gap-2 bg-white border border-gray-200 text-gray-700 px-5 py-2.5 rounded-2xl text-sm font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all-smooth shadow-sm disabled:opacity-50 disabled:cursor-not-allowed">
                 <i class="ph ph-arrow-u-up-left text-lg"></i>
                 <span>Restore Database</span>
               </button>
@@ -180,107 +134,75 @@
     <!-- Right Column: Settings (1/3 width) -->
     <div class="space-y-6">
       <!-- Section: Schedule Automatic Backup -->
-      <div
-        class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-      >
-        <div class="bg-slate-50 px-6 py-4 border-b border-slate-200">
-          <h2
-            class="text-sm font-bold text-slate-800 uppercase tracking-wide flex items-center gap-2"
-          >
-            <i class="ph ph-clock text-lg"></i> Automation
+      <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+        <div class="bg-gray-50 px-6 py-5 border-b border-gray-100">
+          <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wide flex items-center gap-2">
+            <div class="h-8 w-8 bg-gray-100 rounded-xl flex items-center justify-center">
+              <i class="ph ph-clock text-lg text-gray-600"></i>
+            </div>
+            Automation
           </h2>
         </div>
         <div class="p-6 space-y-6">
           <!-- Daily Schedule -->
           <div class="flex items-start justify-between">
             <div>
-              <p class="text-sm font-bold text-slate-800">Daily Backup</p>
-              <p class="text-xs text-slate-500 mt-0.5">
-                Incremental backup at 12:00 AM
-              </p>
+              <p class="text-sm font-bold text-gray-900">Daily Backup</p>
+              <p class="text-xs text-gray-500 mt-0.5">Incremental backup at 12:00 AM</p>
             </div>
             <!-- Toggle Switch (On) -->
-            <button
-              class="relative w-11 h-6 bg-slate-800 rounded-full transition-colors focus:outline-none"
-            >
-              <span
-                class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition-transform translate-x-5 shadow-sm"
-              ></span>
+            <button class="relative w-11 h-6 bg-gray-900 rounded-full transition-colors focus:outline-none">
+              <span class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition-transform translate-x-5 shadow-sm"></span>
             </button>
           </div>
 
           <!-- Weekly Schedule -->
-          <div
-            class="flex items-start justify-between pt-4 border-t border-slate-100"
-          >
+          <div class="flex items-start justify-between pt-4 border-t border-gray-100">
             <div>
-              <p class="text-sm font-bold text-slate-800">Weekly Full Backup</p>
-              <p class="text-xs text-slate-500 mt-0.5">
-                Full dump every Sunday at 02:00 AM
-              </p>
+              <p class="text-sm font-bold text-gray-900">Weekly Full Backup</p>
+              <p class="text-xs text-gray-500 mt-0.5">Full dump every Sunday at 02:00 AM</p>
             </div>
             <!-- Toggle Switch (On) -->
-            <button
-              class="relative w-11 h-6 bg-slate-800 rounded-full transition-colors focus:outline-none"
-            >
-              <span
-                class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition-transform translate-x-5 shadow-sm"
-              ></span>
+            <button class="relative w-11 h-6 bg-gray-900 rounded-full transition-colors focus:outline-none">
+              <span class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition-transform translate-x-5 shadow-sm"></span>
             </button>
           </div>
 
           <!-- Cloud Sync (Off) -->
-          <div
-            class="flex items-start justify-between pt-4 border-t border-slate-100 opacity-60"
-          >
+          <div class="flex items-start justify-between pt-4 border-t border-gray-100 opacity-60">
             <div>
-              <p class="text-sm font-bold text-slate-800">Cloud Sync</p>
-              <p class="text-xs text-slate-500 mt-0.5">
-                Upload to Remote Storage
-              </p>
+              <p class="text-sm font-bold text-gray-900">Cloud Sync</p>
+              <p class="text-xs text-gray-500 mt-0.5">Upload to Remote Storage</p>
             </div>
             <!-- Toggle Switch (Off) -->
-            <button
-              class="relative w-11 h-6 bg-slate-200 rounded-full transition-colors focus:outline-none cursor-not-allowed"
-            >
-              <span
-                class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition-transform translate-x-0 shadow-sm border border-slate-300"
-              ></span>
+            <button class="relative w-11 h-6 bg-gray-200 rounded-full transition-colors focus:outline-none cursor-not-allowed">
+              <span class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition-transform translate-x-0 shadow-sm border border-gray-300"></span>
             </button>
           </div>
 
-          <button
-            class="w-full mt-4 bg-white border border-slate-300 text-slate-700 py-2 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors"
-          >
+          <button class="w-full mt-4 bg-white border border-gray-200 text-gray-700 py-2.5 rounded-xl text-sm font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all-smooth">
             Update Schedule
           </button>
         </div>
       </div>
 
       <!-- Quick Stats -->
-      <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-        <h3
-          class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4"
-        >
-          Storage Usage
-        </h3>
+      <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 hover-card">
+        <h3 class="text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Storage Usage</h3>
         <div class="space-y-4">
           <div>
             <div class="flex justify-between text-xs mb-1">
-              <span class="text-slate-600 font-medium">Backup Directory</span>
-              <span class="text-slate-800 font-bold">4.2 GB / 50 GB</span>
+              <span class="text-gray-600 font-medium">Backup Directory</span>
+              <span class="text-gray-900 font-bold">4.2 GB / 50 GB</span>
             </div>
-            <div class="w-full bg-slate-100 rounded-full h-2">
-              <div
-                class="bg-slate-600 h-2 rounded-full"
-                style="width: 8.4%"
-              ></div>
+            <div class="w-full bg-gray-100 rounded-full h-2">
+              <div class="bg-gray-600 h-2 rounded-full transition-all duration-500" style="width: 8.4%"></div>
             </div>
           </div>
           <div>
             <div class="flex justify-between text-xs mb-1">
-              <span class="text-slate-600 font-medium">Retention Policy</span>
-              <span class="text-slate-800 font-bold">30 Days</span>
+              <span class="text-gray-600 font-medium">Retention Policy</span>
+              <span class="text-gray-900 font-bold">30 Days</span>
             </div>
           </div>
         </div>
@@ -289,14 +211,11 @@
   </div>
 
   <!-- Non-Admin Fallback -->
-  <div
-    class="hidden flex-col items-center justify-center h-64 text-center border-2 border-dashed border-slate-300 rounded-xl bg-slate-50"
-    id="access-denied-backup"
-  >
-    <i class="ph ph-lock-key text-4xl text-slate-400 mb-2"></i>
-    <h2 class="text-lg font-bold text-slate-700">Access Restricted</h2>
-    <p class="text-sm text-slate-500">
-      Only Administrators can manage system backups.
-    </p>
+  <div class="hidden flex-col items-center justify-center h-64 text-center border-2 border-dashed border-gray-300 rounded-3xl bg-gray-50" id="access-denied-backup">
+    <div class="h-16 w-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-3">
+      <i class="ph ph-lock-key text-3xl text-gray-400"></i>
+    </div>
+    <h2 class="text-lg font-bold text-gray-700">Access Restricted</h2>
+    <p class="text-sm text-gray-500">Only Administrators can manage system backups.</p>
   </div>
 </div>

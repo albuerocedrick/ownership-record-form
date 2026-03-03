@@ -1,63 +1,82 @@
-<div class="flex items-center justify-between h-full px-6">
-  <!-- Search Bar -->
-  <div class="flex-1 max-w-lg">
-    <div class="relative flex items-center">
-      <i
-        class="ph ph-magnifying-glass absolute left-3 text-lg text-slate-400"
-      ></i>
+<div class="flex items-center justify-between h-full px-4 lg:px-8 gap-4">
+  <!-- Left: Mobile Menu Button + Logo (mobile only) -->
+  <div class="flex items-center gap-3">
+    <button 
+      onclick="toggleMobileSidebar()" 
+      class="mobile-menu-btn lg:hidden"
+      aria-label="Toggle menu"
+    >
+      <i class="ph ph-list text-2xl"></i>
+    </button>
+    
+    <!-- Mobile Logo (visible only on small screens) -->
+    <div class="lg:hidden flex items-center gap-2">
+      <div class="w-8 h-8 rounded-xl bg-gray-900 flex items-center justify-center">
+        <i class="ph ph-buildings text-white text-lg"></i>
+      </div>
+      <span class="font-bold text-gray-900 text-sm hidden sm:block">Municipal</span>
+    </div>
+  </div>
+
+  <!-- Search - Hidden on mobile, expandable -->
+  <div class="hidden md:flex flex-1 max-w-lg topbar-search-container" id="topbar-search">
+    <div class="relative group w-full">
+      <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-lg text-gray-400 group-focus-within:text-gray-900 transition-colors"></i>
       <input
         type="text"
         placeholder="Search PIN, Owner, TCT/OCT Number..."
-        class="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent bg-slate-50 transition-shadow"
+        class="w-full pl-12 pr-4 py-3 bg-gray-100 border-0 rounded-2xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth"
       />
     </div>
   </div>
 
+  <!-- Mobile Search Toggle -->
+  <button 
+    onclick="toggleMobileSearch()" 
+    class="md:hidden p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all mobile-search-toggle"
+    aria-label="Toggle search"
+  >
+    <i class="ph ph-magnifying-glass text-xl" id="mobile-search-icon"></i>
+  </button>
+
   <!-- Right Actions -->
-  <div class="flex items-center space-x-6">
-    <!-- Role Toggle Simulation -->
-    <div class="flex items-center space-x-3 border-r border-slate-200 pr-6">
-      <div
-        class="flex items-center text-slate-500 text-xs font-bold uppercase tracking-wide gap-2"
-      >
-        <i class="ph ph-toggle-left text-lg"></i>
-        <span>Role View:</span>
-      </div>
-      <select
-        id="role-selector"
-        class="bg-slate-50 border border-slate-200 text-slate-700 text-sm font-medium rounded-md focus:ring-slate-300 focus:border-slate-300 block p-1.5 px-3 cursor-pointer outline-none"
-      >
-        <option value="viewer">Viewer</option>
-        <option value="staff" selected>Staff</option>
-        <option value="admin">Admin</option>
-      </select>
+  <div class="flex items-center gap-2 sm:gap-4">
+    <!-- Role Switcher - Compact on mobile -->
+    <div class="flex items-center gap-1 p-1 bg-gray-100 rounded-xl sm:rounded-2xl" id="role-toggle">
+      <button onclick="setRole('viewer')" data-role="viewer" class="role-btn px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg sm:rounded-xl text-gray-500 hover:text-gray-900 transition-all-smooth">Viewer</button>
+      <button onclick="setRole('staff')" data-role="staff" class="role-btn px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg sm:rounded-xl bg-white text-gray-900 shadow-sm transition-all-smooth">Staff</button>
+      <button onclick="setRole('admin')" data-role="admin" class="role-btn px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium rounded-lg sm:rounded-xl text-gray-500 hover:text-gray-900 transition-all-smooth">Admin</button>
     </div>
 
-    <!-- Notification -->
-    <button
-      class="text-slate-400 hover:text-slate-600 relative transition-colors"
-    >
-      <i class="ph ph-bell text-2xl"></i>
-      <span
-        class="absolute top-0 right-0 block h-2.5 w-2.5 rounded-full bg-red-500 ring-2 ring-white"
-      ></span>
+    <!-- Hidden select for compatibility -->
+    <select id="role-selector" class="hidden">
+      <option value="viewer">Viewer</option>
+      <option value="staff" selected>Staff</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <!-- Notification - Hidden on smallest screens -->
+    <button class="hidden sm:flex relative p-3 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-2xl transition-all-smooth">
+      <i class="ph ph-bell text-xl"></i>
+      <span class="absolute top-3 right-3 w-2 h-2 bg-red-500 rounded-full ring-2 ring-white"></span>
     </button>
 
-    <!-- User Profile -->
-    <div
-      class="flex items-center gap-3 cursor-pointer hover:opacity-80 transition-opacity"
-    >
-      <div class="text-right hidden md:block">
-        <p class="text-sm font-bold text-slate-700 leading-tight">
-          Juan Dela Cruz
-        </p>
-        <p class="text-xs text-slate-500">Assessor I</p>
-      </div>
-      <div
-        class="h-9 w-9 rounded-full bg-slate-800 text-white flex items-center justify-center border border-slate-200 shadow-sm"
-      >
-        <span class="text-xs font-bold">JD</span>
-      </div>
-    </div>
+    <!-- Help - Hidden on mobile -->
+    <button class="hidden lg:flex p-3 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-2xl transition-all-smooth">
+      <i class="ph ph-question text-xl"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Search Dropdown -->
+<div id="mobile-search-dropdown" class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-200 p-4 z-30 shadow-lg">
+  <div class="relative">
+    <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-lg text-gray-400"></i>
+    <input
+      type="text"
+      placeholder="Search PIN, Owner, TCT/OCT..."
+      class="w-full pl-12 pr-4 py-3 bg-gray-100 border-0 rounded-2xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white"
+      autofocus
+    />
   </div>
 </div>

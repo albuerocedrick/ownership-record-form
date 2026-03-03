@@ -1,18 +1,17 @@
-<div class="max-w-7xl mx-auto space-y-6 pb-12 relative">
+<div class="max-w-7xl mx-auto space-y-6 pb-12 animate-fade-in">
   <!-- Page Header -->
   <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
     <div>
-      <h1 class="text-2xl font-bold text-slate-800 tracking-tight">
+      <h1 class="text-3xl font-bold text-gray-900 tracking-tight">
         Document Repository
       </h1>
-      <p class="text-sm text-slate-500">
-        Manage, view, and organize all attached property documents and scanned
-        records.
+      <p class="text-sm text-gray-500 mt-1">
+        Manage, view, and organize all attached property documents and scanned records.
       </p>
     </div>
     <!-- Upload Button (Visible to Staff/Admin) -->
     <button
-      class="flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors shadow-sm"
+      class="flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-2xl text-sm font-semibold hover:bg-gray-800 transition-all-smooth hover:shadow-lg hover:shadow-gray-900/20"
       data-roles="staff admin"
     >
       <i class="ph ph-upload-simple text-lg"></i>
@@ -21,18 +20,14 @@
   </div>
 
   <!-- Controls Toolbar -->
-  <div
-    class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col lg:flex-row gap-4 justify-between items-center"
-  >
+  <div class="bg-white p-5 rounded-3xl border border-gray-100 flex flex-col lg:flex-row gap-4 justify-between items-center hover-card">
     <!-- Search -->
     <div class="w-full lg:w-1/3 relative">
-      <i
-        class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"
-      ></i>
+      <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
       <input
         type="text"
         placeholder="Search File Name, TD Number..."
-        class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-slate-400 focus:border-transparent bg-slate-50"
+        class="w-full pl-12 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-2xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth"
       />
     </div>
 
@@ -40,150 +35,102 @@
     <div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
       <!-- Document Type Filter -->
       <div class="relative">
-        <select
-          class="appearance-none w-full sm:w-40 bg-slate-50 border border-slate-200 text-slate-700 py-2 pl-3 pr-8 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-slate-200 cursor-pointer"
-        >
+        <select class="appearance-none w-full sm:w-40 bg-gray-50 border border-gray-200 text-gray-700 py-3 pl-4 pr-10 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer transition-all-smooth hover:border-gray-300">
           <option value="">All Types</option>
           <option value="deed">Deed of Sale</option>
           <option value="index">Index Card</option>
           <option value="title">Land Title</option>
           <option value="taxdec">Tax Declaration</option>
         </select>
-        <i
-          class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-        ></i>
+        <i class="ph ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
       </div>
 
       <!-- Upload Date Filter -->
       <div class="relative">
-        <select
-          class="appearance-none w-full sm:w-40 bg-slate-50 border border-slate-200 text-slate-700 py-2 pl-3 pr-8 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-slate-200 cursor-pointer"
-        >
+        <select class="appearance-none w-full sm:w-40 bg-gray-50 border border-gray-200 text-gray-700 py-3 pl-4 pr-10 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer transition-all-smooth hover:border-gray-300">
           <option value="">Any Date</option>
           <option value="today">Today</option>
           <option value="week">Last 7 Days</option>
           <option value="month">This Month</option>
         </select>
-        <i
-          class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-        ></i>
+        <i class="ph ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
       </div>
 
       <!-- Uploaded By Filter -->
       <div class="relative">
-        <select
-          class="appearance-none w-full sm:w-40 bg-white border border-slate-200 text-slate-700 py-2 pl-3 pr-8 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-slate-200 cursor-pointer shadow-sm"
-        >
+        <select class="appearance-none w-full sm:w-40 bg-white border border-gray-200 text-gray-900 py-3 pl-4 pr-10 rounded-2xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer transition-all-smooth hover:border-gray-300 shadow-sm">
           <option value="all">All Users</option>
           <option value="me">Uploaded by Me</option>
           <option value="others">Uploaded by Others</option>
         </select>
-        <i
-          class="ph ph-user absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
-        ></i>
+        <i class="ph ph-user absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></i>
       </div>
     </div>
   </div>
 
   <!-- Data Table -->
-  <div
-    class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-  >
+  <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden hover-card">
     <div class="overflow-x-auto">
-      <table class="w-full text-left text-sm text-slate-600">
-        <thead
-          class="bg-slate-50 text-xs text-slate-500 uppercase font-semibold border-b border-slate-200"
-        >
+      <table class="w-full text-left text-sm">
+        <thead class="bg-gray-50 border-b border-gray-100">
           <tr>
-            <th class="px-6 py-4">File Name</th>
-            <th class="px-6 py-4">Type</th>
-            <th class="px-6 py-4 whitespace-nowrap">Related TD</th>
-            <th class="px-6 py-4">Uploaded By</th>
-            <th class="px-6 py-4 whitespace-nowrap">Date</th>
-            <th class="px-6 py-4 text-right">Actions</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">File Name</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Type</th>
+            <th class="px-6 py-4 whitespace-nowrap text-xs font-bold text-gray-500 uppercase tracking-wider">Related TD</th>
+            <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Uploaded By</th>
+            <th class="px-6 py-4 whitespace-nowrap text-xs font-bold text-gray-500 uppercase tracking-wider">Date</th>
+            <th class="px-6 py-4 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Actions</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-slate-100">
+        <tbody class="divide-y divide-gray-100">
           <!-- Row 1: PDF Document -->
-          <tr class="hover:bg-slate-50 transition-colors group">
+          <tr class="hover:bg-gray-50/50 transition-colors group">
             <td class="px-6 py-4">
               <div class="flex items-center gap-3">
-                <div
-                  class="p-2 bg-slate-100 rounded text-slate-600 border border-slate-200"
-                >
+                <div class="h-10 w-10 bg-gray-50 rounded-xl flex items-center justify-center text-gray-600 border border-gray-200">
                   <i class="ph ph-file-pdf text-xl"></i>
                 </div>
                 <div>
-                  <p class="font-bold text-slate-800 leading-tight">
-                    Deed_of_Sale_Signed.pdf
-                  </p>
-                  <p class="text-[0.65rem] text-slate-400 font-mono mt-0.5">
-                    2.4 MB
-                  </p>
+                  <p class="font-semibold text-gray-900">Deed_of_Sale_Signed.pdf</p>
+                  <p class="text-xs text-gray-400 font-mono mt-0.5">2.4 MB</p>
                 </div>
               </div>
             </td>
             <td class="px-6 py-4">
-              <span
-                class="inline-flex items-center px-2 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium border border-slate-200"
-                >Deed of Sale</span
-              >
+              <span class="inline-flex items-center px-3 py-1.5 rounded-xl bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200">
+                Deed of Sale
+              </span>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-              <p
-                class="font-mono font-medium text-slate-700 hover:text-slate-900 cursor-pointer underline decoration-slate-300 underline-offset-2"
-              >
-                TD-2025-001
-              </p>
+              <p class="font-mono font-semibold text-gray-900 hover:text-gray-600 cursor-pointer underline decoration-gray-300 underline-offset-2">TD-2025-001</p>
             </td>
             <td class="px-6 py-4">
               <div class="flex items-center gap-2">
-                <div
-                  class="h-6 w-6 rounded-full bg-slate-200 flex items-center justify-center text-[0.60rem] font-bold text-slate-600 border border-slate-300"
-                >
+                <div class="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-700 border border-gray-200">
                   JD
                 </div>
-                <span class="text-xs text-slate-600 font-medium"
-                  >Juan Dela Cruz</span
-                >
+                <span class="text-sm text-gray-600">Juan Dela Cruz</span>
               </div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-              <p class="text-sm text-slate-800">Oct 24, 2025</p>
+              <p class="text-sm text-gray-600">Oct 24, 2025</p>
             </td>
             <td class="px-6 py-4 text-right">
               <div class="flex items-center justify-end gap-1">
                 <!-- Preview (All Roles) -->
-                <button
-                  onclick="openPreviewModal('Deed_of_Sale_Signed.pdf')"
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Preview Document"
-                  data-roles="viewer staff admin"
-                >
+                <button onclick="openPreviewModal('Deed_of_Sale_Signed.pdf')" class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth" title="Preview Document" data-roles="viewer staff admin">
                   <i class="ph ph-eye text-lg"></i>
                 </button>
                 <!-- Replace (Staff/Admin) -->
-                <button
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Replace Document"
-                  data-roles="staff admin"
-                >
+                <button class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth" title="Replace Document" data-roles="staff admin">
                   <i class="ph ph-arrows-clockwise text-lg"></i>
                 </button>
                 <!-- View History (Admin) -->
-                <button
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Version History"
-                  data-roles="admin"
-                >
+                <button class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth" title="Version History" data-roles="admin">
                   <i class="ph ph-clock-counter-clockwise text-lg"></i>
                 </button>
                 <!-- Delete (Admin) -->
-                <button
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Delete Document"
-                  data-roles="admin"
-                >
+                <button class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-50 rounded-xl transition-all-smooth" title="Delete Document" data-roles="admin">
                   <i class="ph ph-trash text-lg"></i>
                 </button>
               </div>
@@ -191,81 +138,49 @@
           </tr>
 
           <!-- Row 2: Image Document -->
-          <tr class="hover:bg-slate-50 transition-colors group">
+          <tr class="hover:bg-gray-50/50 transition-colors group">
             <td class="px-6 py-4">
               <div class="flex items-center gap-3">
-                <div
-                  class="p-2 bg-slate-100 rounded text-slate-600 border border-slate-200"
-                >
+                <div class="h-10 w-10 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 border border-purple-100">
                   <i class="ph ph-image text-xl"></i>
                 </div>
                 <div>
-                  <p class="font-bold text-slate-800 leading-tight">
-                    Index_Card_Scan_Front.jpg
-                  </p>
-                  <p class="text-[0.65rem] text-slate-400 font-mono mt-0.5">
-                    1.1 MB
-                  </p>
+                  <p class="font-semibold text-gray-900">Index_Card_Scan_Front.jpg</p>
+                  <p class="text-xs text-gray-400 font-mono mt-0.5">1.1 MB</p>
                 </div>
               </div>
             </td>
             <td class="px-6 py-4">
-              <span
-                class="inline-flex items-center px-2 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium border border-slate-200"
-                >Index Card</span
-              >
+              <span class="inline-flex items-center px-3 py-1.5 rounded-xl bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200">
+                Index Card
+              </span>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-              <p
-                class="font-mono font-medium text-slate-700 hover:text-slate-900 cursor-pointer underline decoration-slate-300 underline-offset-2"
-              >
-                TD-2025-001
-              </p>
+              <p class="font-mono font-semibold text-gray-900 hover:text-gray-600 cursor-pointer underline decoration-gray-300 underline-offset-2">TD-2025-001</p>
             </td>
             <td class="px-6 py-4">
               <div class="flex items-center gap-2">
-                <div
-                  class="h-6 w-6 rounded-full bg-slate-800 text-white flex items-center justify-center text-[0.60rem] font-bold border border-slate-600"
-                >
+                <div class="h-8 w-8 rounded-full bg-gray-900 text-white flex items-center justify-center text-xs font-bold border border-gray-700">
                   SA
                 </div>
-                <span class="text-xs text-slate-600 font-medium"
-                  >System Admin</span
-                >
+                <span class="text-sm text-gray-600">System Admin</span>
               </div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-              <p class="text-sm text-slate-800">Oct 24, 2025</p>
+              <p class="text-sm text-gray-600">Oct 24, 2025</p>
             </td>
             <td class="px-6 py-4 text-right">
               <div class="flex items-center justify-end gap-1">
-                <button
-                  onclick="openPreviewModal('Index_Card_Scan_Front.jpg')"
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Preview Document"
-                  data-roles="viewer staff admin"
-                >
+                <button onclick="openPreviewModal('Index_Card_Scan_Front.jpg')" class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth" title="Preview Document" data-roles="viewer staff admin">
                   <i class="ph ph-eye text-lg"></i>
                 </button>
-                <button
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Replace Document"
-                  data-roles="staff admin"
-                >
+                <button class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth" title="Replace Document" data-roles="staff admin">
                   <i class="ph ph-arrows-clockwise text-lg"></i>
                 </button>
-                <button
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Version History"
-                  data-roles="admin"
-                >
+                <button class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth" title="Version History" data-roles="admin">
                   <i class="ph ph-clock-counter-clockwise text-lg"></i>
                 </button>
-                <button
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Delete Document"
-                  data-roles="admin"
-                >
+                <button class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-50 rounded-xl transition-all-smooth" title="Delete Document" data-roles="admin">
                   <i class="ph ph-trash text-lg"></i>
                 </button>
               </div>
@@ -273,79 +188,49 @@
           </tr>
 
           <!-- Row 3: Old Tax Dec -->
-          <tr class="hover:bg-slate-50 transition-colors group">
+          <tr class="hover:bg-gray-50/50 transition-colors group">
             <td class="px-6 py-4">
               <div class="flex items-center gap-3">
-                <div
-                  class="p-2 bg-slate-100 rounded text-slate-600 border border-slate-200"
-                >
+                <div class="h-10 w-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 border border-blue-100">
                   <i class="ph ph-file-text text-xl"></i>
                 </div>
                 <div>
-                  <p class="font-bold text-slate-800 leading-tight">
-                    Old_TaxDec_2015.pdf
-                  </p>
-                  <p class="text-[0.65rem] text-slate-400 font-mono mt-0.5">
-                    850 KB
-                  </p>
+                  <p class="font-semibold text-gray-900">Old_TaxDec_2015.pdf</p>
+                  <p class="text-xs text-gray-400 font-mono mt-0.5">850 KB</p>
                 </div>
               </div>
             </td>
             <td class="px-6 py-4">
-              <span
-                class="inline-flex items-center px-2 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium border border-slate-200"
-                >Tax Declaration</span
-              >
+              <span class="inline-flex items-center px-3 py-1.5 rounded-xl bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200">
+                Tax Declaration
+              </span>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-              <p class="font-mono font-medium text-slate-400 line-through">
-                TD-2015-088
-              </p>
+              <p class="font-mono font-semibold text-gray-400 line-through">TD-2015-088</p>
             </td>
             <td class="px-6 py-4">
               <div class="flex items-center gap-2">
-                <div
-                  class="h-6 w-6 rounded-full bg-slate-200 flex items-center justify-center text-[0.60rem] font-bold text-slate-600 border border-slate-300"
-                >
+                <div class="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-700 border border-gray-200">
                   JD
                 </div>
-                <span class="text-xs text-slate-600 font-medium"
-                  >Juan Dela Cruz</span
-                >
+                <span class="text-sm text-gray-600">Juan Dela Cruz</span>
               </div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-              <p class="text-sm text-slate-800">Sep 12, 2025</p>
+              <p class="text-sm text-gray-600">Sep 12, 2025</p>
             </td>
             <td class="px-6 py-4 text-right">
               <div class="flex items-center justify-end gap-1">
-                <button
-                  onclick="openPreviewModal('Old_TaxDec_2015.pdf')"
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Preview Document"
-                  data-roles="viewer staff admin"
-                >
+                <button onclick="openPreviewModal('Old_TaxDec_2015.pdf')" class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth" title="Preview Document" data-roles="viewer staff admin">
                   <i class="ph ph-eye text-lg"></i>
                 </button>
-                <button
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Replace Document"
-                  data-roles="staff admin"
-                >
+                <button class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth" title="Replace Document" data-roles="staff admin">
                   <i class="ph ph-arrows-clockwise text-lg"></i>
                 </button>
-                <button
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Version History"
-                  data-roles="admin"
-                >
+                <button class="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-xl transition-all-smooth" title="Version History" data-roles="admin">
                   <i class="ph ph-clock-counter-clockwise text-lg"></i>
                 </button>
-                <button
-                  class="p-1.5 text-slate-500 hover:text-slate-900 hover:bg-slate-200 rounded transition-colors"
-                  title="Delete Document"
-                  data-roles="admin"
-                >
+                <button class="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-50 rounded-xl transition-all-smooth" title="Delete Document" data-roles="admin">
                   <i class="ph ph-trash text-lg"></i>
                 </button>
               </div>
@@ -356,38 +241,25 @@
     </div>
 
     <!-- Pagination -->
-    <div
-      class="bg-slate-50 px-6 py-4 border-t border-slate-200 flex items-center justify-between"
-    >
-      <span class="text-xs text-slate-500"
-        >Showing <span class="font-bold text-slate-700">1-3</span> of
-        <span class="font-bold text-slate-700">12,450</span> documents</span
-      >
-      <div class="flex space-x-1">
-        <button
-          class="px-3 py-1 rounded border border-slate-300 bg-white text-slate-600 text-xs hover:bg-slate-50 disabled:opacity-50"
-        >
+    <div class="bg-gray-50 px-6 py-4 border-t border-gray-100 flex items-center justify-between">
+      <span class="text-sm text-gray-500">
+        Showing <span class="font-semibold text-gray-900">1-3</span> of <span class="font-semibold text-gray-900">12,450</span> documents
+      </span>
+      <div class="flex space-x-2">
+        <button class="px-4 py-2 rounded-xl border border-gray-200 bg-white text-gray-600 text-sm font-medium hover:bg-gray-50 hover:border-gray-300 transition-all-smooth disabled:opacity-50">
           Prev
         </button>
-        <button
-          class="px-3 py-1 rounded border border-slate-300 bg-slate-800 text-white text-xs"
-        >
+        <button class="px-4 py-2 rounded-xl border border-gray-900 bg-gray-900 text-white text-sm font-medium">
           1
         </button>
-        <button
-          class="px-3 py-1 rounded border border-slate-300 bg-white text-slate-600 text-xs hover:bg-slate-50"
-        >
+        <button class="px-4 py-2 rounded-xl border border-gray-200 bg-white text-gray-600 text-sm font-medium hover:bg-gray-50 hover:border-gray-300 transition-all-smooth">
           2
         </button>
-        <button
-          class="px-3 py-1 rounded border border-slate-300 bg-white text-slate-600 text-xs hover:bg-slate-50"
-        >
+        <button class="px-4 py-2 rounded-xl border border-gray-200 bg-white text-gray-600 text-sm font-medium hover:bg-gray-50 hover:border-gray-300 transition-all-smooth">
           3
         </button>
-        <span class="px-2 text-slate-400">...</span>
-        <button
-          class="px-3 py-1 rounded border border-slate-300 bg-white text-slate-600 text-xs hover:bg-slate-50"
-        >
+        <span class="px-2 text-gray-400 self-center">...</span>
+        <button class="px-4 py-2 rounded-xl border border-gray-200 bg-white text-gray-600 text-sm font-medium hover:bg-gray-50 hover:border-gray-300 transition-all-smooth">
           Next
         </button>
       </div>
@@ -395,62 +267,42 @@
   </div>
 
   <!-- Document Preview Modal (Hidden by default) -->
-  <div
-    id="document-preview-modal"
-    class="fixed inset-0 bg-slate-900/60 z-50 hidden flex items-center justify-center p-4 sm:p-6 backdrop-blur-sm"
-  >
-    <div
-      class="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-full flex flex-col overflow-hidden border border-slate-200"
-    >
+  <div id="document-preview-modal" class="fixed inset-0 bg-gray-900/60 z-50 hidden flex items-center justify-center p-4 sm:p-6 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl shadow-2xl w-full max-w-4xl max-h-full flex flex-col overflow-hidden border border-gray-100">
       <!-- Modal Header -->
-      <div
-        class="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50"
-      >
+      <div class="px-6 py-5 border-b border-gray-100 flex items-center justify-between bg-gray-50">
         <div class="flex items-center gap-3">
-          <i class="ph ph-file-text text-2xl text-slate-600"></i>
+          <div class="h-10 w-10 bg-gray-100 rounded-xl flex items-center justify-center">
+            <i class="ph ph-file-text text-xl text-gray-600"></i>
+          </div>
           <div>
-            <h3 id="modal-doc-title" class="text-sm font-bold text-slate-900">
-              Document_Preview.pdf
-            </h3>
-            <p class="text-[0.65rem] font-mono text-slate-500">
-              Secure Preview Mode
-            </p>
+            <h3 id="modal-doc-title" class="text-sm font-bold text-gray-900">Document_Preview.pdf</h3>
+            <p class="text-xs font-mono text-gray-400">Secure Preview Mode</p>
           </div>
         </div>
-        <button
-          onclick="closePreviewModal()"
-          class="text-slate-400 hover:text-slate-800 hover:bg-slate-200 p-1.5 rounded transition-colors"
-        >
+        <button onclick="closePreviewModal()" class="text-gray-400 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-xl transition-all-smooth">
           <i class="ph ph-x text-xl"></i>
         </button>
       </div>
 
       <!-- Modal Body (Simulated Viewer) -->
-      <div
-        class="p-6 bg-slate-100 flex-1 overflow-y-auto flex items-center justify-center min-h-[50vh]"
-      >
-        <div
-          class="bg-white w-full max-w-2xl h-[600px] border border-slate-300 shadow-sm flex flex-col items-center justify-center text-slate-400 gap-4"
-        >
-          <i class="ph ph-image-square text-6xl opacity-50"></i>
-          <p class="text-sm font-medium">Document rendering simulation</p>
-          <div class="w-2/3 h-px bg-slate-200 mt-4"></div>
-          <div class="w-1/2 h-4 bg-slate-100 rounded mt-4"></div>
-          <div class="w-2/3 h-4 bg-slate-100 rounded"></div>
-          <div class="w-1/2 h-4 bg-slate-100 rounded"></div>
+      <div class="p-6 bg-gray-100 flex-1 overflow-y-auto flex items-center justify-center min-h-[50vh]">
+        <div class="bg-white w-full max-w-2xl h-[600px] border border-gray-200 shadow-sm flex flex-col items-center justify-center text-gray-400 gap-4 rounded-2xl">
+          <div class="h-20 w-20 bg-gray-50 rounded-2xl flex items-center justify-center">
+            <i class="ph ph-image-square text-4xl text-gray-300"></i>
+          </div>
+          <p class="text-sm font-medium text-gray-500">Document rendering simulation</p>
+          <div class="w-2/3 h-px bg-gray-200 mt-4"></div>
+          <div class="w-1/2 h-4 bg-gray-100 rounded mt-4"></div>
+          <div class="w-2/3 h-4 bg-gray-100 rounded"></div>
+          <div class="w-1/2 h-4 bg-gray-100 rounded"></div>
         </div>
       </div>
 
       <!-- Modal Footer -->
-      <div
-        class="px-6 py-4 border-t border-slate-200 bg-white flex items-center justify-between"
-      >
-        <span class="text-xs text-slate-500 font-mono"
-          >Confidential Document</span
-        >
-        <button
-          class="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors shadow-sm"
-        >
+      <div class="px-6 py-5 border-t border-gray-100 bg-white flex items-center justify-between">
+        <span class="text-xs text-gray-400 font-mono">Confidential Document</span>
+        <button class="flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-xl text-sm font-semibold hover:bg-gray-800 transition-all-smooth hover:shadow-lg hover:shadow-gray-900/20">
           <i class="ph ph-download-simple text-lg"></i>
           <span>Download Original</span>
         </button>

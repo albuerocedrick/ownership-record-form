@@ -1,258 +1,147 @@
-<div class="max-w-5xl mx-auto space-y-6 pb-12" data-roles="staff admin">
+<div class="max-w-5xl mx-auto space-y-6 pb-12 animate-fade-in" data-roles="staff admin">
   <!-- Header -->
   <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
     <div class="flex items-start gap-4">
-      <button
-        onclick="goBackToRecords()"
-        class="mt-1 p-2 bg-white border border-slate-300 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors shadow-sm"
-        title="Back to Records"
-      >
+      <button onclick="goBackToRecords()" 
+              class="mt-1 p-2.5 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 text-gray-600 transition-all-smooth shadow-sm hover:shadow-md"
+              title="Back to Records">
         <i class="ph ph-arrow-left text-lg"></i>
       </button>
       <div>
-        <h1 class="text-2xl font-bold text-slate-900 tracking-tight">
-          Edit Record
-        </h1>
-        <p class="text-sm text-slate-500 mt-1">
-          Updating declaration details for
-          <span class="font-bold text-slate-700">Dela Cruz, Juan</span>.
+        <h1 class="text-3xl font-bold text-gray-900 tracking-tight">Edit Record</h1>
+        <p class="text-sm text-gray-500 mt-1">
+          Updating declaration details for <span class="font-semibold text-gray-900">Dela Cruz, Juan</span>.
         </p>
       </div>
     </div>
   </div>
 
   <!-- System Notice -->
-  <div
-    class="bg-slate-100 border-l-4 border-slate-500 p-4 rounded-r-lg flex items-start gap-3 shadow-sm"
-  >
-    <i class="ph ph-info text-slate-600 text-xl mt-0.5"></i>
+  <div class="bg-gray-50 border-l-4 border-gray-400 p-5 rounded-r-2xl flex items-start gap-3 shadow-sm">
+    <div class="h-10 w-10 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
+      <i class="ph ph-info text-gray-600 text-xl"></i>
+    </div>
     <div>
-      <p class="text-sm font-bold text-slate-800">System Notice</p>
-      <p class="text-xs text-slate-600 mt-0.5">
-        All modifications are tracked.
-        <span class="font-semibold text-slate-800"
-          >Changes are logged automatically</span
-        >
-        with your user ID and timestamp.
+      <p class="text-sm font-bold text-gray-900">System Notice</p>
+      <p class="text-xs text-gray-600 mt-1">
+        All modifications are tracked. <span class="font-semibold text-gray-900">Changes are logged automatically</span> with your user ID and timestamp.
       </p>
     </div>
   </div>
 
   <!-- Edit Form -->
-  <form
-    class="space-y-6"
-    onsubmit="
-      event.preventDefault();
-      goBackToRecords();
-    "
-  >
+  <form class="space-y-6" onsubmit="event.preventDefault(); goBackToRecords();">
     <!-- Core Identifiers -->
-    <div
-      class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-    >
-      <div class="bg-slate-50 px-6 py-4 border-b border-slate-200">
-        <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
-          Core Identifiers
-        </h2>
+    <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+      <div class="bg-gray-50 px-6 py-5 border-b border-gray-100">
+        <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Core Identifiers</h2>
       </div>
       <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- TD Number: Admin can edit, Staff cannot -->
         <div>
-          <label
-            class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
-            >TD Number</label
-          >
+          <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">TD Number</label>
           <!-- Admin View (Editable) -->
           <div data-roles="admin">
-            <input
-              type="text"
-              value="TD-2025-001"
-              class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-slate-400 outline-none font-mono font-medium text-slate-900 shadow-sm"
-            />
-            <p class="text-[0.65rem] text-slate-400 mt-1">
-              Admin override enabled.
-            </p>
+            <input type="text" value="TD-2025-001" 
+                   class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-white focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none font-mono font-semibold text-gray-900 transition-all" />
+            <p class="text-xs text-gray-400 mt-1.5">Admin override enabled.</p>
           </div>
           <!-- Staff View (Read-only) -->
           <div data-roles="staff">
-            <input
-              type="text"
-              value="TD-2025-001"
-              readonly
-              disabled
-              class="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm bg-slate-100 text-slate-500 cursor-not-allowed font-mono shadow-inner"
-            />
-            <p class="text-[0.65rem] text-slate-400 mt-1">
-              Contact an admin to change the TD number.
-            </p>
+            <input type="text" value="TD-2025-001" readonly disabled 
+                   class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-gray-100 text-gray-500 cursor-not-allowed font-mono" />
+            <p class="text-xs text-gray-400 mt-1.5">Contact an admin to change the TD number.</p>
           </div>
         </div>
 
         <div>
-          <label
-            class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
-            >Property Index Number (PIN)</label
-          >
-          <input
-            type="text"
-            value="001-02-003-04-001"
-            class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-slate-400 outline-none font-mono shadow-sm"
-          />
+          <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Property Index Number (PIN)</label>
+          <input type="text" value="001-02-003-04-001" 
+                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-white focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none font-mono transition-all" />
         </div>
       </div>
     </div>
 
     <!-- Property Details (Limited fields for staff) -->
-    <div
-      class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-    >
-      <div class="bg-slate-50 px-6 py-4 border-b border-slate-200">
-        <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
-          Property Details
-        </h2>
+    <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+      <div class="bg-gray-50 px-6 py-5 border-b border-gray-100">
+        <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Property Details</h2>
       </div>
       <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="md:col-span-2">
-          <label
-            class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
-            >Location / Address</label
-          >
-          <input
-            type="text"
-            value="Lot 42 Block 3, Brgy. Poblacion"
-            class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-slate-400 outline-none shadow-sm"
-          />
+          <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Location / Address</label>
+          <input type="text" value="Lot 42 Block 3, Brgy. Poblacion" 
+                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-white focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none transition-all" />
         </div>
 
         <!-- Classification & Area: Admin can edit, Staff cannot -->
         <div>
-          <label
-            class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
-            >Classification</label
-          >
-          <select
-            data-roles="admin"
-            class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-slate-400 outline-none shadow-sm cursor-pointer"
-          >
+          <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Classification</label>
+          <select data-roles="admin" 
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-white focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none cursor-pointer transition-all">
             <option value="res" selected>Residential</option>
             <option value="com">Commercial</option>
             <option value="agri">Agricultural</option>
           </select>
-          <input
-            data-roles="staff"
-            type="text"
-            value="Residential"
-            readonly
-            disabled
-            class="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm bg-slate-100 text-slate-500 cursor-not-allowed shadow-inner"
-          />
+          <input data-roles="staff" type="text" value="Residential" readonly disabled 
+                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-gray-100 text-gray-500 cursor-not-allowed" />
         </div>
 
         <div>
-          <label
-            class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
-            >Total Area (sq.m)</label
-          >
-          <input
-            data-roles="admin"
-            type="number"
-            value="250"
-            class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-slate-400 outline-none shadow-sm"
-          />
-          <input
-            data-roles="staff"
-            type="text"
-            value="250"
-            readonly
-            disabled
-            class="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm bg-slate-100 text-slate-500 cursor-not-allowed shadow-inner"
-          />
+          <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Total Area (sq.m)</label>
+          <input data-roles="admin" type="number" value="250" 
+                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-white focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none transition-all" />
+          <input data-roles="staff" type="text" value="250" readonly disabled 
+                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-gray-100 text-gray-500 cursor-not-allowed" />
         </div>
       </div>
     </div>
 
     <!-- Owner Information (Editable by both) -->
-    <div
-      class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-    >
-      <div class="bg-slate-50 px-6 py-4 border-b border-slate-200">
-        <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wide">
-          Owner Information
-        </h2>
+    <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
+      <div class="bg-gray-50 px-6 py-5 border-b border-gray-100">
+        <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Owner Information</h2>
       </div>
       <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="md:col-span-2">
-          <label
-            class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
-            >Full Name / Entity Name</label
-          >
-          <input
-            type="text"
-            value="Dela Cruz, Juan M."
-            class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-slate-400 outline-none font-semibold shadow-sm"
-          />
+          <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Full Name / Entity Name</label>
+          <input type="text" value="Dela Cruz, Juan M." 
+                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-white focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none font-semibold transition-all" />
         </div>
 
         <div>
-          <label
-            class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
-            >TIN</label
-          >
-          <input
-            type="text"
-            value="123-456-789-000"
-            class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-slate-400 outline-none font-mono shadow-sm"
-          />
+          <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">TIN</label>
+          <input type="text" value="123-456-789-000" 
+                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-white focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none font-mono transition-all" />
         </div>
 
         <div>
-          <label
-            class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2"
-            >Contact Number</label
-          >
-          <input
-            type="text"
-            value="+63 912 345 6789"
-            class="w-full px-4 py-2.5 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-slate-400 outline-none shadow-sm"
-          />
+          <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Contact Number</label>
+          <input type="text" value="+63 912 345 6789" 
+                 class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-white focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none transition-all" />
         </div>
       </div>
     </div>
 
     <!-- Authorization / Reason -->
-    <div
-      class="bg-white rounded-xl border border-slate-300 shadow-sm overflow-hidden border-l-4 border-l-slate-800"
-    >
+    <div class="bg-white rounded-3xl border border-gray-200 shadow-sm overflow-hidden border-l-4 border-l-gray-900 hover-card">
       <div class="p-6">
-        <label
-          class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2"
-          >Reason for Update
-          <span class="text-slate-500 lowercase font-normal"
-            >(Required)</span
-          ></label
-        >
-        <textarea
-          required
-          rows="3"
-          placeholder="State the reason for modifying this record (e.g., Typographical error correction, Reassessment, etc.)"
-          class="w-full px-4 py-3 border border-slate-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-slate-600 outline-none shadow-sm resize-none"
-        ></textarea>
+        <label class="block text-xs font-bold text-gray-900 uppercase tracking-wider mb-2">
+          Reason for Update <span class="text-gray-500 lowercase font-normal">(Required)</span>
+        </label>
+        <textarea required rows="3" placeholder="State the reason for modifying this record (e.g., Typographical error correction, Reassessment, etc.)" 
+                  class="w-full px-4 py-3 border border-gray-200 rounded-xl text-sm bg-white focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none resize-none transition-all"></textarea>
       </div>
     </div>
 
     <!-- Form Actions -->
     <div class="flex items-center justify-end gap-3 pt-2">
-      <button
-        type="button"
-        onclick="goBackToRecords()"
-        class="px-5 py-2.5 bg-white border border-slate-300 text-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 transition-colors shadow-sm"
-      >
+      <button type="button" onclick="goBackToRecords()" 
+              class="px-6 py-3 bg-white border border-gray-200 text-gray-700 rounded-xl text-sm font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all-smooth shadow-sm">
         Cancel
       </button>
-      <button
-        type="submit"
-        class="flex items-center gap-2 px-6 py-2.5 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors shadow-sm"
-      >
+      <button type="submit" 
+              class="flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-xl text-sm font-semibold hover:bg-gray-800 transition-all-smooth hover:shadow-lg hover:shadow-gray-900/20">
         <i class="ph ph-floppy-disk text-lg"></i>
         <span>Save Changes</span>
       </button>

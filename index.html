@@ -2,59 +2,341 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>DORMS | Digital Ownership Record Management System</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Phosphor Icons (Modern Icon Set) -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
-      /* Custom Scrollbar for professional feel */
+      * {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      
+      body {
+        background: #f3f4f6;
+      }
+      
+      /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 6px;
+        height: 6px;
       }
       ::-webkit-scrollbar-track {
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
-        border-radius: 4px;
+        background: #d1d5db;
+        border-radius: 3px;
       }
-      /* Font fix for icons alignment */
-      .ph {
-        vertical-align: middle;
+      
+      /* Animations */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      
+      .animate-slide-in {
+        animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      .animate-fade-in {
+        animation: fadeIn 0.3s ease forwards;
+      }
+      
+      .animate-scale-in {
+        animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      /* Stagger children */
+      .stagger-children > * {
+        opacity: 0;
+        animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      .stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+      .stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+      .stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+      .stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+      .stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+      .stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
+      
+      /* Card hover effect */
+      .hover-card {
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .hover-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+      }
+      
+      /* Glass effect */
+      .glass {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+      }
+      
+      /* Gradient text */
+      .text-gradient {
+        background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      /* Active nav indicator */
+      .nav-active {
+        background: rgba(255, 255, 255, 0.1);
+        border-left: 3px solid #fff;
+      }
+      
+      /* Smooth transitions */
+      .transition-all-smooth {
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* =============================================
+         CUSTOM DROPDOWN COMPONENT
+         ============================================= */
+
+      .custom-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-trigger {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 16px;
+        background-color: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        font-size: 0.875rem;
+        color: #374151;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        outline: none;
+        user-select: none;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+
+      .dropdown-trigger:hover {
+        border-color: #d1d5db;
+        background-color: #f3f4f6;
+      }
+
+      .custom-dropdown.open .dropdown-trigger {
+        border-color: #9ca3af;
+        background-color: #ffffff;
+        box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.15);
+      }
+
+      .sort-trigger {
+        background-color: #ffffff;
+        border-color: #e5e7eb;
+        color: #111827;
+        font-weight: 600;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      }
+
+      .sort-trigger:hover {
+        background-color: #f9fafb;
+      }
+
+      .dropdown-icon {
+        margin-left: auto;
+        font-size: 0.85rem;
+        color: #9ca3af;
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        flex-shrink: 0;
+      }
+
+      .custom-dropdown.open .dropdown-icon {
+        transform: rotate(180deg);
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        min-width: 100%;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 18px;
+        box-shadow: 0 4px 6px -2px rgba(0,0,0,0.04), 0 12px 28px -4px rgba(0,0,0,0.10);
+        z-index: 50;
+        overflow: hidden;
+        padding: 6px;
+        opacity: 0;
+        transform: translateY(-6px) scale(0.98);
+        pointer-events: none;
+        transition: opacity 0.2s cubic-bezier(0.16,1,0.3,1), transform 0.2s cubic-bezier(0.16,1,0.3,1);
+        transform-origin: top left;
+      }
+
+      .custom-dropdown.open .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+      }
+
+      .dropdown-menu-right {
+        left: auto;
+        right: 0;
+        transform-origin: top right;
+      }
+
+      .dropdown-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .dropdown-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 12px;
+        font-size: 0.875rem;
+        color: #374151;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.15s ease, color 0.15s ease;
+        white-space: nowrap;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f3f4f6;
+        color: #111827;
+      }
+
+      .dropdown-item.selected {
+        background-color: #111827;
+        color: #ffffff;
+        font-weight: 600;
+      }
+
+      .dropdown-item.selected i,
+      .dropdown-item.selected .status-dot {
+        opacity: 0.75;
+      }
+
+      .status-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      /* =============================================
+         MOBILE RESPONSIVE FIXES
+         ============================================= */
+
+      /* Mobile sidebar overlay */
+      .mobile-sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 35;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .mobile-sidebar-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Sidebar mobile styles */
+      #sidebar-container {
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      @media (max-width: 1023px) {
+        #sidebar-container {
+          transform: translateX(-100%);
+        }
+        
+        #sidebar-container.mobile-open {
+          transform: translateX(0);
+        }
+        
+        #topbar-container {
+          left: 0 !important;
+        }
+        
+        #main-content {
+          margin-left: 0 !important;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        #sidebar-container {
+          transform: translateX(0) !important;
+        }
       }
     </style>
   </head>
-  <body
-    class="bg-slate-50 text-slate-800 antialiased font-sans overflow-hidden"
-  >
+  <body class="antialiased text-gray-900 overflow-hidden">
+    <!-- Mobile Sidebar Overlay -->
+    <div id="mobile-overlay" class="mobile-sidebar-overlay lg:hidden" onclick="toggleMobileSidebar()"></div>
+
     <div class="flex h-screen w-full">
-      <!-- Sidebar Container (Fixed Left) -->
-      <div
+      <!-- Dark Sidebar - Fixed position, transforms on mobile -->
+      <aside
         id="sidebar-container"
-        class="w-64 flex-shrink-0 fixed h-full z-20 bg-white border-r border-slate-200"
-      ></div>
+        class="w-72 flex-shrink-0 fixed lg:fixed h-full z-40 bg-gray-900 text-white overflow-hidden"
+      ></aside>
 
-      <!-- Main Workspace -->
-      <div class="flex-1 ml-64 flex flex-col h-screen relative">
-        <!-- Topbar Container (Fixed Top) -->
-        <div
+      <!-- Main Content - Full width on mobile, offset on desktop -->
+      <div class="flex-1 lg:ml-72 flex flex-col h-screen relative w-full">
+        <!-- Topbar - Full width on mobile -->
+        <header
           id="topbar-container"
-          class="fixed top-0 right-0 left-64 z-10 bg-white border-b border-slate-200 h-16"
-        ></div>
+          class="fixed top-0 right-0 left-0 lg:left-72 z-30 bg-white/80 backdrop-blur-xl border-b border-gray-200/50 h-20 transition-all duration-300"
+        ></header>
 
-        <!-- Main Dynamic Content Area -->
+        <!-- Dynamic Content -->
         <main
           id="main-content"
-          class="mt-16 p-6 overflow-y-auto h-[calc(100vh-4rem)]"
-        >
-          <!-- Pages load here dynamically -->
-        </main>
+          class="mt-20 p-4 sm:p-6 lg:p-8 overflow-y-auto h-[calc(100vh-5rem)] bg-gray-50/50 w-full"
+        ></main>
       </div>
     </div>
 
-    <!-- Main Logic -->
+    <!-- Global Loader -->
+    <div id="global-loader" class="fixed inset-0 bg-white z-50 flex items-center justify-center transition-opacity duration-500 pointer-events-none opacity-0">
+      <div class="flex flex-col items-center gap-3">
+        <div class="w-8 h-8 border-3 border-gray-200 border-t-gray-900 rounded-full animate-spin"></div>
+      </div>
+    </div>
+
     <script src="assets/js/role-toggle.js"></script>
   </body>
 </html>

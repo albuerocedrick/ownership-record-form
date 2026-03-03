@@ -1,20 +1,19 @@
-<div class="max-w-6xl mx-auto space-y-6 pb-20" data-roles="staff admin">
+<div class="max-w-6xl mx-auto space-y-6 pb-20 animate-fade-in" data-roles="staff admin">
   <!-- Page Header -->
   <div class="flex items-center justify-between">
     <div>
-      <h1 class="text-2xl font-bold text-slate-800 tracking-tight">
+      <h1 class="text-3xl font-bold text-gray-900 tracking-tight">
         Scan Index Card
       </h1>
-      <p class="text-sm text-slate-500">
-        Digitize physical property records using Optical Character Recognition
-        (OCR).
+      <p class="text-sm text-gray-500 mt-1">
+        Digitize physical property records using Optical Character Recognition (OCR).
       </p>
     </div>
     <button
       onclick="loadComponent('pages/dashboard.html', 'main-content')"
-      class="text-sm text-slate-500 hover:text-slate-800 flex items-center gap-1 transition-colors"
+      class="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1 transition-colors px-4 py-2 rounded-xl hover:bg-gray-100"
     >
-      <i class="ph ph-arrow-left"></i> Back to Dashboard
+      <i class="ph ph-arrow-left text-lg"></i> Back to Dashboard
     </button>
   </div>
 
@@ -22,46 +21,33 @@
     <!-- LEFT COLUMN: Upload & Preview -->
     <div class="lg:col-span-1 space-y-6">
       <!-- Upload Section -->
-      <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-        <h2
-          class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-4 flex items-center gap-2"
-        >
-          <i class="ph ph-upload-simple"></i> Source Image
+      <div class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 hover-card">
+        <h2 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4 flex items-center gap-2">
+          <i class="ph ph-upload-simple text-lg"></i> Source Image
         </h2>
 
         <!-- Drop Zone -->
         <div
-          class="border-2 border-dashed border-slate-300 rounded-xl p-8 flex flex-col items-center justify-center text-center hover:bg-slate-50 transition-colors cursor-pointer group relative overflow-hidden"
+          class="border-2 border-dashed border-gray-300 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:bg-gray-50 transition-colors cursor-pointer group relative overflow-hidden"
           id="upload-zone"
         >
-          <div
-            class="h-12 w-12 bg-slate-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-slate-200 transition-colors z-10"
-          >
-            <i class="ph ph-camera text-2xl text-slate-500"></i>
+          <div class="h-14 w-14 bg-gray-100 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-gray-200 transition-colors z-10">
+            <i class="ph ph-camera text-2xl text-gray-500"></i>
           </div>
-          <span class="text-sm font-medium text-slate-700 z-10"
-            >Upload or Capture</span
-          >
-          <span class="text-xs text-slate-400 mt-1 z-10"
-            >JPG, PNG (Max 5MB)</span
-          >
-          <input
-            type="file"
-            class="absolute inset-0 opacity-0 cursor-pointer z-20"
-          />
+          <span class="text-sm font-semibold text-gray-700 z-10">Upload or Capture</span>
+          <span class="text-xs text-gray-400 mt-1 z-10">JPG, PNG (Max 5MB)</span>
+          <input type="file" class="absolute inset-0 opacity-0 cursor-pointer z-20" />
         </div>
 
         <!-- Camera UI Button -->
-        <button
-          class="mt-4 w-full py-2.5 border border-slate-300 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-50 flex items-center justify-center gap-2"
-        >
-          <i class="ph ph-webcam"></i> Open Web Camera
+        <button class="mt-4 w-full py-3 border border-gray-200 rounded-xl text-sm font-semibold text-gray-600 hover:bg-gray-50 hover:border-gray-300 transition-all-smooth flex items-center justify-center gap-2">
+          <i class="ph ph-webcam text-lg"></i> Open Web Camera
         </button>
 
         <!-- Scan Button -->
         <button
           onclick="simulateScan()"
-          class="mt-4 w-full py-3 bg-slate-900 text-white rounded-lg text-sm font-bold hover:bg-slate-800 shadow-md flex items-center justify-center gap-2 transition-all active:scale-95"
+          class="mt-4 w-full py-3.5 bg-gray-900 text-white rounded-xl text-sm font-bold hover:bg-gray-800 shadow-lg hover:shadow-xl hover:shadow-gray-900/20 flex items-center justify-center gap-2 transition-all-smooth active:scale-95"
         >
           <i class="ph ph-scan text-lg"></i> Analyze & Extract Text
         </button>
@@ -70,16 +56,14 @@
       <!-- Image Preview (Simulated State) -->
       <div
         id="image-preview"
-        class="hidden bg-slate-100 rounded-xl border border-slate-200 shadow-sm overflow-hidden relative group"
+        class="hidden bg-gray-100 rounded-3xl border border-gray-200 shadow-sm overflow-hidden relative group"
       >
         <img
-          src="https://placehold.co/400x300/e2e8f0/64748b?text=Scanned+Index+Card+Preview"
+          src="https://placehold.co/400x300/e5e7eb/6b7280?text=Scanned+Index+Card+Preview"
           alt="Scanned Card"
           class="w-full h-auto opacity-90 group-hover:opacity-100 transition-opacity"
         />
-        <div
-          class="absolute top-2 right-2 bg-black/70 text-white text-[0.65rem] px-2 py-1 rounded"
-        >
+        <div class="absolute top-3 right-3 bg-gray-900/80 text-white text-xs px-3 py-1.5 rounded-lg font-medium backdrop-blur-sm">
           Preview
         </div>
       </div>
@@ -90,116 +74,87 @@
       <!-- Empty State -->
       <div
         id="ocr-empty-state"
-        class="h-full bg-slate-50 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-400 p-10 min-h-[400px]"
+        class="h-full bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200 flex flex-col items-center justify-center text-gray-400 p-10 min-h-[500px]"
       >
-        <i class="ph ph-scan text-5xl mb-4 text-slate-300"></i>
-        <p class="text-sm">
-          Upload an image and click "Analyze" to see extracted data here.
-        </p>
+        <div class="h-20 w-20 bg-gray-100 rounded-2xl flex items-center justify-center mb-4">
+          <i class="ph ph-scan text-4xl text-gray-300"></i>
+        </div>
+        <p class="text-sm font-medium">Upload an image and click "Analyze" to see extracted data here.</p>
       </div>
 
       <!-- Loading State (Hidden by default) -->
       <div
         id="ocr-loading"
-        class="hidden h-full bg-white rounded-xl border border-slate-200 flex flex-col items-center justify-center p-10 min-h-[400px]"
+        class="hidden h-full bg-white rounded-3xl border border-gray-100 shadow-sm flex flex-col items-center justify-center p-10 min-h-[500px]"
       >
-        <div class="flex items-center gap-2 mb-4">
-          <span class="relative flex h-3 w-3">
-            <span
-              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"
-            ></span>
-            <span
-              class="relative inline-flex rounded-full h-3 w-3 bg-blue-500"
-            ></span>
+        <div class="flex items-center gap-3 mb-6">
+          <span class="relative flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-gray-600"></span>
           </span>
-          <span class="text-sm font-bold text-slate-700 animate-pulse"
-            >Processing with Cloud Vision...</span
-          >
+          <span class="text-base font-bold text-gray-900 animate-pulse">Processing with Cloud Vision...</span>
         </div>
-        <div class="w-64 bg-slate-100 rounded-full h-1.5 overflow-hidden">
-          <div
-            class="bg-blue-600 h-1.5 rounded-full animate-[wiggle_1s_ease-in-out_infinite]"
-            style="width: 50%"
-          ></div>
+        <div class="w-72 bg-gray-100 rounded-full h-2 overflow-hidden">
+          <div class="bg-gray-800 h-2 rounded-full animate-[loading_1.5s_ease-in-out_infinite]" style="width: 60%"></div>
         </div>
-        <p class="text-xs text-slate-400 mt-4">
-          Identifying text blocks and handwriting...
-        </p>
+        <p class="text-sm text-gray-400 mt-4">Identifying text blocks and handwriting...</p>
       </div>
 
       <!-- Extracted Form (Hidden by default) -->
       <div
         id="ocr-results"
-        class="hidden bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
+        class="hidden bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden"
       >
-        <div
-          class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex items-center justify-between"
-        >
+        <div class="px-6 py-5 border-b border-gray-100 bg-gray-50 flex items-center justify-between">
           <div class="flex items-center gap-2">
-            <i class="ph ph-magic-wand text-lg text-purple-600"></i>
-            <h2
-              class="text-sm font-bold text-slate-700 uppercase tracking-wide"
-            >
-              Extracted Data
-            </h2>
+            <div class="h-8 w-8 bg-purple-100 rounded-xl flex items-center justify-center">
+              <i class="ph ph-magic-wand text-purple-600"></i>
+            </div>
+            <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Extracted Data</h2>
           </div>
-          <span
-            class="bg-emerald-100 text-emerald-700 text-xs px-2 py-1 rounded font-bold border border-emerald-200"
-          >
+          <span class="bg-gray-50 text-gray-700 text-xs px-3 py-1.5 rounded-full font-bold border border-gray-200">
             98% Confidence
           </span>
         </div>
 
-        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-5">
           <!-- Owner Name -->
           <div class="md:col-span-2">
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-1"
-              >Owner Name</label
-            >
+            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Owner Name</label>
             <div class="relative group">
               <input
                 type="text"
                 value="DELA CRUZ, JUAN A."
-                class="w-full border border-purple-300 bg-purple-50 rounded-lg px-3 py-2 text-sm font-bold text-slate-800 focus:ring-2 focus:ring-purple-400 outline-none"
+                class="w-full border-2 border-purple-200 bg-purple-50/50 rounded-xl px-4 py-3 text-sm font-bold text-gray-900 focus:ring-4 focus:ring-purple-100 focus:border-purple-300 outline-none transition-all"
               />
-              <i
-                class="ph ph-pencil-simple absolute right-3 top-2.5 text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity"
-              ></i>
+              <i class="ph ph-pencil-simple absolute right-4 top-3.5 text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity"></i>
             </div>
           </div>
 
           <!-- TD Number -->
           <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-1"
-              >TD Number</label
-            >
+            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">TD Number</label>
             <input
               type="text"
               value="TD-2025-12345"
-              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-slate-400 outline-none"
+              class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none transition-all bg-gray-50/50"
             />
           </div>
 
           <!-- Date -->
           <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-1"
-              >Date Registered</label
-            >
+            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Date Registered</label>
             <input
               type="date"
               value="2025-10-24"
-              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-slate-400 outline-none text-slate-600"
+              class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none transition-all bg-gray-50/50"
             />
           </div>
 
           <!-- Barangay -->
           <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-1"
-              >Barangay</label
-            >
-            <select
-              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-slate-400 outline-none bg-white"
-            >
+            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Barangay</label>
+            <select class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none transition-all bg-gray-50/50">
               <option selected>Poblacion</option>
               <option>San Jose</option>
               <option>Sta. Maria</option>
@@ -208,79 +163,58 @@
 
           <!-- Lot Number -->
           <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-1"
-              >Lot No.</label
-            >
+            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Lot No.</label>
             <input
               type="text"
               value="Lot 4 Blk 2"
-              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-slate-400 outline-none"
+              class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none transition-all bg-gray-50/50"
             />
           </div>
 
           <!-- Classification -->
           <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-1"
-              >Classification</label
-            >
+            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Classification</label>
             <input
               type="text"
               value="Residential"
-              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-slate-400 outline-none"
+              class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none transition-all bg-gray-50/50"
             />
           </div>
 
           <!-- Land Area -->
           <div>
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-1"
-              >Area (sq.m)</label
-            >
+            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Area (sq.m)</label>
             <input
               type="number"
               value="240"
-              class="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-slate-400 outline-none"
+              class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none transition-all bg-gray-50/50"
             />
           </div>
 
           <!-- Assessed Value -->
           <div class="md:col-span-2">
-            <label class="block text-xs font-bold text-slate-500 uppercase mb-1"
-              >Assessed Value</label
-            >
+            <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Assessed Value</label>
             <div class="relative">
-              <span
-                class="absolute left-3 top-2 text-slate-500 font-bold text-sm"
-                >₱</span
-              >
+              <span class="absolute left-4 top-3.5 text-gray-500 font-bold text-sm">₱</span>
               <input
                 type="text"
                 value="1,250,000.00"
-                class="w-full border border-slate-300 rounded-lg pl-7 pr-3 py-2 text-sm focus:ring-2 focus:ring-slate-400 outline-none font-mono"
+                class="w-full border border-gray-200 rounded-xl pl-8 pr-4 py-3 text-sm focus:ring-4 focus:ring-gray-100 focus:border-gray-300 outline-none transition-all bg-gray-50/50 font-mono"
               />
             </div>
           </div>
         </div>
 
         <!-- Validation Actions -->
-        <div
-          class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-end gap-3"
-        >
-          <button
-            onclick="resetScan()"
-            class="px-4 py-2 text-sm text-slate-500 hover:text-slate-800 font-medium"
-          >
+        <div class="px-6 py-5 bg-gray-50 border-t border-gray-100 flex items-center justify-end gap-3">
+          <button onclick="resetScan()" class="px-5 py-2.5 text-sm text-gray-500 hover:text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition-all">
             Cancel
           </button>
-          <button
-            onclick="simulateScan()"
-            class="px-4 py-2 bg-white border border-slate-300 text-slate-700 text-sm font-medium rounded-lg hover:bg-slate-50 shadow-sm flex items-center gap-2"
-          >
+          <button onclick="simulateScan()" class="px-5 py-2.5 bg-white border border-gray-200 text-gray-700 text-sm font-semibold rounded-xl hover:bg-gray-50 hover:border-gray-300 shadow-sm transition-all flex items-center gap-2">
             <i class="ph ph-arrows-clockwise"></i> Rescan
           </button>
-          <button
-            class="px-4 py-2 bg-slate-900 text-white text-sm font-bold rounded-lg hover:bg-slate-800 shadow-md flex items-center gap-2"
-          >
-            <i class="ph ph-check-circle"></i> Confirm & Save
+          <button class="px-5 py-2.5 bg-gray-900 text-white text-sm font-bold rounded-xl hover:bg-gray-800 shadow-lg hover:shadow-xl hover:shadow-gray-900/20 transition-all flex items-center gap-2">
+            <i class="ph ph-check-circle text-lg"></i> Confirm & Save
           </button>
         </div>
       </div>
@@ -289,76 +223,58 @@
 
   <!-- ADMIN EXTRA: Scan Logs Table -->
   <div class="mt-8 hidden" data-roles="admin">
-    <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
-      <i class="ph ph-scroll text-slate-400"></i> OCR Activity Logs
+    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+      <i class="ph ph-scroll text-gray-400"></i> OCR Activity Logs
     </h3>
 
-    <div
-      class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-    >
+    <div class="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden hover-card">
       <div class="overflow-x-auto">
-        <table class="w-full text-left text-sm text-slate-600">
-          <thead
-            class="bg-slate-50 text-xs text-slate-500 uppercase font-semibold border-b border-slate-200"
-          >
+        <table class="w-full text-left text-sm text-gray-600">
+          <thead class="bg-gray-50 border-b border-gray-100">
             <tr>
-              <th class="px-6 py-3">Scanned By</th>
-              <th class="px-6 py-3">Date & Time</th>
-              <th class="px-6 py-3">Filename</th>
-              <th class="px-6 py-3">Status</th>
-              <th class="px-6 py-3">Confidence</th>
-              <th class="px-6 py-3 text-right">Action</th>
+              <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Scanned By</th>
+              <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Date & Time</th>
+              <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Filename</th>
+              <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Status</th>
+              <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Confidence</th>
+              <th class="px-6 py-4 text-right text-xs font-bold text-gray-500 uppercase tracking-wider">Action</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-100">
-            <tr>
-              <td class="px-6 py-3 font-medium text-slate-800">J. Dela Cruz</td>
-              <td class="px-6 py-3 text-xs">Mar 01, 2026 - 05:45 PM</td>
-              <td class="px-6 py-3 font-mono text-xs">img_scan_004.jpg</td>
-              <td class="px-6 py-3">
-                <span
-                  class="inline-flex items-center px-2 py-0.5 rounded text-[0.65rem] font-bold bg-green-100 text-green-700 uppercase"
-                  >Success</span
-                >
+          <tbody class="divide-y divide-gray-100">
+            <tr class="hover:bg-gray-50/50 transition-colors">
+              <td class="px-6 py-4 font-semibold text-gray-900">J. Dela Cruz</td>
+              <td class="px-6 py-4 text-xs text-gray-500">Mar 01, 2026 - 05:45 PM</td>
+              <td class="px-6 py-4 font-mono text-xs text-gray-600">img_scan_004.jpg</td>
+              <td class="px-6 py-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-gray-50 text-gray-700 border border-gray-200">
+                  <span class="h-1.5 w-1.5 rounded-full bg-gray-500"></span> Success
+                </span>
               </td>
-              <td class="px-6 py-3">
-                <div class="w-16 bg-slate-200 rounded-full h-1.5">
-                  <div
-                    class="bg-green-500 h-1.5 rounded-full"
-                    style="width: 98%"
-                  ></div>
+              <td class="px-6 py-4">
+                <div class="w-20 bg-gray-200 rounded-full h-1.5">
+                  <div class="bg-gray-500 h-1.5 rounded-full" style="width: 98%"></div>
                 </div>
               </td>
-              <td class="px-6 py-3 text-right">
-                <button
-                  class="text-xs text-blue-600 font-medium hover:underline"
-                >
-                  View
-                </button>
+              <td class="px-6 py-4 text-right">
+                <button class="text-xs text-gray-600 font-semibold hover:text-gray-900 hover:underline">View</button>
               </td>
             </tr>
-            <tr>
-              <td class="px-6 py-3 font-medium text-slate-800">M. Santos</td>
-              <td class="px-6 py-3 text-xs">Mar 01, 2026 - 04:30 PM</td>
-              <td class="px-6 py-3 font-mono text-xs">img_scan_003.jpg</td>
-              <td class="px-6 py-3">
-                <span
-                  class="inline-flex items-center px-2 py-0.5 rounded text-[0.65rem] font-bold bg-red-100 text-red-700 uppercase"
-                  >Failed</span
-                >
+            <tr class="hover:bg-gray-50/50 transition-colors">
+              <td class="px-6 py-4 font-semibold text-gray-900">M. Santos</td>
+              <td class="px-6 py-4 text-xs text-gray-500">Mar 01, 2026 - 04:30 PM</td>
+              <td class="px-6 py-4 font-mono text-xs text-gray-600">img_scan_003.jpg</td>
+              <td class="px-6 py-4">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-gray-50 text-gray-700 border border-gray-200">
+                  <span class="h-1.5 w-1.5 rounded-full bg-gray-500"></span> Failed
+                </span>
               </td>
-              <td class="px-6 py-3">
-                <div class="w-16 bg-slate-200 rounded-full h-1.5">
-                  <div
-                    class="bg-red-500 h-1.5 rounded-full"
-                    style="width: 20%"
-                  ></div>
+              <td class="px-6 py-4">
+                <div class="w-20 bg-gray-200 rounded-full h-1.5">
+                  <div class="bg-gray-500 h-1.5 rounded-full" style="width: 20%"></div>
                 </div>
               </td>
-              <td class="px-6 py-3 text-right">
-                <button
-                  class="text-xs text-slate-600 font-medium hover:text-slate-900 flex items-center justify-end gap-1"
-                >
+              <td class="px-6 py-4 text-right">
+                <button class="text-xs text-gray-600 font-semibold hover:text-gray-900 flex items-center justify-end gap-1">
                   <i class="ph ph-arrow-counter-clockwise"></i> Retry
                 </button>
               </td>
@@ -369,31 +285,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  // Simple inline script to simulate the UI state changes for the prototype
-  function simulateScan() {
-    const emptyState = document.getElementById("ocr-empty-state");
-    const loadingState = document.getElementById("ocr-loading");
-    const resultsState = document.getElementById("ocr-results");
-    const imagePreview = document.getElementById("image-preview");
-
-    // 1. Show Loading, Hide Empty
-    emptyState.classList.add("hidden");
-    resultsState.classList.add("hidden");
-    loadingState.classList.remove("hidden");
-    imagePreview.classList.remove("hidden");
-
-    // 2. Simulate Delay (1.5 seconds)
-    setTimeout(() => {
-      loadingState.classList.add("hidden");
-      resultsState.classList.remove("hidden");
-    }, 1500);
-  }
-
-  function resetScan() {
-    document.getElementById("ocr-empty-state").classList.remove("hidden");
-    document.getElementById("ocr-results").classList.add("hidden");
-    document.getElementById("image-preview").classList.add("hidden");
-  }
-</script>

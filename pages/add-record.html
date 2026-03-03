@@ -1,32 +1,30 @@
-<div class="max-w-5xl mx-auto space-y-6 pb-20" data-roles="staff admin">
+<div class="max-w-5xl mx-auto space-y-6 pb-20 animate-fade-in" data-roles="staff admin">
   <!-- Page Header -->
   <div class="flex items-center justify-between">
     <div>
-      <h1 class="text-2xl font-bold text-slate-800 tracking-tight">
+      <h1 class="text-3xl font-bold text-gray-900 tracking-tight">
         Add New Record
       </h1>
-      <p class="text-sm text-slate-500">
+      <p class="text-sm text-gray-500 mt-1">
         Create a new Tax Declaration or Property Ownership record.
       </p>
     </div>
     <button
       onclick="loadComponent('pages/records.html', 'main-content')"
-      class="text-sm text-slate-500 hover:text-slate-800 flex items-center gap-1 transition-colors"
+      class="text-sm font-medium text-gray-500 hover:text-gray-900 flex items-center gap-2 px-4 py-2 rounded-2xl hover:bg-gray-100 transition-all-smooth"
     >
-      <i class="ph ph-arrow-left"></i> Cancel & Return
+      <i class="ph ph-arrow-left text-lg"></i> Cancel & Return
     </button>
   </div>
 
   <form onsubmit="event.preventDefault()" class="space-y-6">
     <!-- SECTION 1: Owner Information -->
-    <div
-      class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-    >
-      <div
-        class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex items-center gap-2"
-      >
-        <i class="ph ph-user-circle text-lg text-slate-500"></i>
-        <h2 class="text-sm font-bold text-slate-700 uppercase tracking-wide">
+    <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden hover-card">
+      <div class="px-6 py-5 border-b border-gray-100 bg-gray-50/50 flex items-center gap-3">
+        <div class="h-10 w-10 rounded-2xl bg-gray-100 flex items-center justify-center">
+          <i class="ph ph-user-circle text-xl text-gray-600"></i>
+        </div>
+        <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wide">
           1. Owner Information
         </h2>
       </div>
@@ -34,57 +32,56 @@
       <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Full Name -->
         <div class="md:col-span-2">
-          <label class="block text-sm font-medium text-slate-700 mb-1"
-            >Owner Full Name <span class="text-red-500">*</span></label
-          >
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Owner Full Name <span class="text-red-500">*</span>
+          </label>
           <input
             type="text"
             placeholder="Last Name, First Name, Middle Initial"
-            class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-slate-400 focus:border-slate-400 outline-none transition-shadow"
+            class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth"
             required
           />
-          <p class="text-[0.65rem] text-slate-400 mt-1">
+          <p class="text-xs text-gray-400 mt-2">
             Format: Dela Cruz, Juan A.
           </p>
         </div>
 
         <!-- Contact Number -->
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1"
-            >Contact Number</label
-          >
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Contact Number
+          </label>
           <div class="relative">
-            <span class="absolute left-3 top-2.5 text-slate-400 text-sm"
-              >+63</span
-            >
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-sm font-medium">+63</span>
             <input
               type="tel"
               placeholder="912 345 6789"
-              class="w-full border border-slate-300 rounded-lg pl-10 pr-3 py-2.5 text-sm focus:ring-2 focus:ring-slate-400 focus:border-slate-400 outline-none transition-shadow"
+              class="w-full bg-gray-50 border border-gray-200 rounded-2xl pl-12 pr-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth"
             />
           </div>
         </div>
 
         <!-- Email Address -->
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1"
-            >Email Address (Optional)</label
-          >
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Email Address (Optional)
+          </label>
           <input
             type="email"
             placeholder="owner@email.com"
-            class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-slate-400 focus:border-slate-400 outline-none transition-shadow"
+            class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth"
           />
+        </div>
 
         <!-- Address -->
         <div class="md:col-span-2">
-          <label class="block text-sm font-medium text-slate-700 mb-1"
-            >Complete Mailing Address <span class="text-red-500">*</span></label
-          >
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Complete Mailing Address <span class="text-red-500">*</span>
+          </label>
           <textarea
             rows="2"
             placeholder="House No., Street, Subdivision, Barangay, City/Municipality"
-            class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-slate-400 focus:border-slate-400 outline-none transition-shadow"
+            class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth resize-none"
             required
           ></textarea>
         </div>
@@ -92,14 +89,12 @@
     </div>
 
     <!-- SECTION 2: Property Information -->
-    <div
-      class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-    >
-      <div
-        class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex items-center gap-2"
-      >
-        <i class="ph ph-map-pin-line text-lg text-slate-500"></i>
-        <h2 class="text-sm font-bold text-slate-700 uppercase tracking-wide">
+    <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden hover-card">
+      <div class="px-6 py-5 border-b border-gray-100 bg-gray-50/50 flex items-center gap-3">
+        <div class="h-10 w-10 rounded-2xl bg-gray-100 flex items-center justify-center">
+          <i class="ph ph-map-pin-line text-xl text-gray-600"></i>
+        </div>
+        <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wide">
           2. Property Details
         </h2>
       </div>
@@ -107,22 +102,17 @@
       <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- TD Number with Toggle -->
         <div class="md:col-span-2">
-          <div class="flex items-center justify-between mb-1">
-            <label class="block text-sm font-medium text-slate-700"
-              >Tax Declaration (TD) Number
-              <span class="text-red-500">*</span></label
-            >
-            <div class="flex items-center gap-2">
-              <span class="text-xs text-slate-500">Manual Entry</span>
+          <div class="flex items-center justify-between mb-2">
+            <label class="block text-sm font-semibold text-gray-700">
+              Tax Declaration (TD) Number <span class="text-red-500">*</span>
+            </label>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-medium text-gray-400">Manual Entry</span>
               <label class="relative inline-flex items-center cursor-pointer">
                 <input type="checkbox" checked class="sr-only peer" />
-                <div
-                  class="w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-slate-800"
-                ></div>
+                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gray-900"></div>
               </label>
-              <span class="text-xs font-bold text-slate-700"
-                >Auto-Generate</span
-              >
+              <span class="text-xs font-bold text-gray-900">Auto-Generate</span>
             </div>
           </div>
           <div class="relative">
@@ -130,23 +120,33 @@
               type="text"
               value="TD-2026-AUTO-001"
               readonly
-              class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2.5 text-sm text-slate-500 cursor-not-allowed focus:outline-none"
+              class="w-full bg-gray-100 border border-gray-200 rounded-2xl px-4 py-3 text-sm text-gray-500 cursor-not-allowed focus:outline-none"
             />
-            <i
-              class="ph ph-lock-key absolute right-3 top-2.5 text-slate-400"
-            ></i>
+            <i class="ph ph-lock-key absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg"></i>
           </div>
         </div>
 
-        <!-- Barangay -->
+        <!-- Barangay - Custom Dropdown -->
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1"
-            >Barangay Location <span class="text-red-500">*</span></label
-          >
-          <div class="relative">
-            <select
-              class="w-full appearance-none border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-slate-400 focus:border-slate-400 outline-none bg-white"
-            >
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Barangay Location <span class="text-red-500">*</span>
+          </label>
+          <div class="relative custom-dropdown" data-dropdown="barangay">
+            <button type="button" onclick="toggleDropdown('barangay')" class="flex items-center justify-between w-full bg-gray-50 border border-gray-200 rounded-2xl px-4 py-3 text-sm text-gray-900 focus:outline-none hover:border-gray-300 transition-all-smooth">
+              <span id="barangay-text">Select Barangay</span>
+              <i class="ph ph-caret-down text-gray-400 transition-transform duration-200 dropdown-caret"></i>
+            </button>
+            <div class="hidden absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-gray-900/10 overflow-hidden z-50 animate-scale-in">
+              <div class="p-1">
+                <button type="button" onclick="selectOption('barangay', '', 'Select Barangay')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-900 bg-gray-100 rounded-xl transition-all-smooth">Select Barangay</button>
+                <button type="button" onclick="selectOption('barangay', 'pob', 'Poblacion')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all-smooth">Poblacion</button>
+                <button type="button" onclick="selectOption('barangay', 'sanjose', 'San Jose')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all-smooth">San Jose</button>
+                <button type="button" onclick="selectOption('barangay', 'stamaria', 'Sta. Maria')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all-smooth">Sta. Maria</button>
+                <button type="button" onclick="selectOption('barangay', 'burgos', 'Burgos')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all-smooth">Burgos</button>
+                <button type="button" onclick="selectOption('barangay', 'rizal', 'Rizal')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all-smooth">Rizal</button>
+              </div>
+            </div>
+            <select class="hidden" id="barangay-select" required>
               <option value="" disabled selected>Select Barangay</option>
               <option value="pob">Poblacion</option>
               <option value="sanjose">San Jose</option>
@@ -154,33 +154,42 @@
               <option value="burgos">Burgos</option>
               <option value="rizal">Rizal</option>
             </select>
-            <i
-              class="ph ph-caret-down absolute right-3 top-3 text-slate-400 pointer-events-none"
-            ></i>
           </div>
         </div>
 
         <!-- Lot Number -->
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1"
-            >Lot / Block / Survey No.</label
-          >
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Lot / Block / Survey No.
+          </label>
           <input
             type="text"
             placeholder="Lot 1 Blk 2 Psd-..."
-            class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-slate-400 focus:border-slate-400 outline-none transition-shadow"
+            class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth"
           />
         </div>
 
-        <!-- Classification -->
+        <!-- Classification - Custom Dropdown -->
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1"
-            >Property Classification <span class="text-red-500">*</span></label
-          >
-          <div class="relative">
-            <select
-              class="w-full appearance-none border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-slate-400 focus:border-slate-400 outline-none bg-white"
-            >
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Property Classification <span class="text-red-500">*</span>
+          </label>
+          <div class="relative custom-dropdown" data-dropdown="classification">
+            <button type="button" onclick="toggleDropdown('classification')" class="flex items-center justify-between w-full bg-gray-50 border border-gray-200 rounded-2xl px-4 py-3 text-sm text-gray-900 focus:outline-none hover:border-gray-300 transition-all-smooth">
+              <span id="classification-text">Select Class</span>
+              <i class="ph ph-caret-down text-gray-400 transition-transform duration-200 dropdown-caret"></i>
+            </button>
+            <div class="hidden absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-gray-100 shadow-xl shadow-gray-900/10 overflow-hidden z-50 animate-scale-in">
+              <div class="p-1">
+                <button type="button" onclick="selectOption('classification', '', 'Select Class')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-900 bg-gray-100 rounded-xl transition-all-smooth">Select Class</button>
+                <button type="button" onclick="selectOption('classification', 'residential', 'Residential')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all-smooth">Residential</button>
+                <button type="button" onclick="selectOption('classification', 'commercial', 'Commercial')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all-smooth">Commercial</button>
+                <button type="button" onclick="selectOption('classification', 'industrial', 'Industrial')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all-smooth">Industrial</button>
+                <button type="button" onclick="selectOption('classification', 'agricultural', 'Agricultural')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all-smooth">Agricultural</button>
+                <button type="button" onclick="selectOption('classification', 'mineral', 'Mineral')" class="w-full text-left px-4 py-2.5 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-xl transition-all-smooth">Mineral</button>
+              </div>
+            </div>
+            <select class="hidden" id="classification-select" required>
               <option value="" disabled selected>Select Class</option>
               <option value="residential">Residential</option>
               <option value="commercial">Commercial</option>
@@ -188,49 +197,43 @@
               <option value="agricultural">Agricultural</option>
               <option value="mineral">Mineral</option>
             </select>
-            <i
-              class="ph ph-caret-down absolute right-3 top-3 text-slate-400 pointer-events-none"
-            ></i>
           </div>
         </div>
 
         <!-- Date Registered -->
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1"
-            >Date Registered <span class="text-red-500">*</span></label
-          >
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Date Registered <span class="text-red-500">*</span>
+          </label>
           <input
             type="date"
-            class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-slate-400 focus:border-slate-400 outline-none transition-shadow text-slate-600"
+            class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth"
           />
         </div>
 
         <!-- Land Area -->
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1"
-            >Land Area (sq.m) <span class="text-red-500">*</span></label
-          >
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Land Area (sq.m) <span class="text-red-500">*</span>
+          </label>
           <input
             type="number"
             placeholder="0.00"
-            class="w-full border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-slate-400 focus:border-slate-400 outline-none transition-shadow"
+            class="w-full bg-gray-50 border border-gray-200 rounded-2xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth"
           />
         </div>
 
         <!-- Assessed Value -->
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-1"
-            >Assessed Value (PHP) <span class="text-red-500">*</span></label
-          >
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Assessed Value (PHP) <span class="text-red-500">*</span>
+          </label>
           <div class="relative">
-            <span
-              class="absolute left-3 top-2.5 text-slate-500 font-bold text-sm"
-              >₱</span
-            >
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-bold text-sm">₱</span>
             <input
               type="number"
               placeholder="0.00"
-              class="w-full border border-slate-300 rounded-lg pl-8 pr-3 py-2.5 text-sm focus:ring-2 focus:ring-slate-400 focus:border-slate-400 outline-none transition-shadow font-mono"
+              class="w-full bg-gray-50 border border-gray-200 rounded-2xl pl-10 pr-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:bg-white transition-all-smooth font-mono"
             />
           </div>
         </div>
@@ -238,90 +241,143 @@
     </div>
 
     <!-- SECTION 3: Document Uploads -->
-    <div
-      class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden"
-    >
-      <div
-        class="px-6 py-4 border-b border-slate-100 bg-slate-50 flex items-center gap-2"
-      >
-        <i class="ph ph-files text-lg text-slate-500"></i>
-        <h2 class="text-sm font-bold text-slate-700 uppercase tracking-wide">
+    <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden hover-card">
+      <div class="px-6 py-5 border-b border-gray-100 bg-gray-50/50 flex items-center gap-3">
+        <div class="h-10 w-10 rounded-2xl bg-gray-100 flex items-center justify-center">
+          <i class="ph ph-files text-xl text-gray-600"></i>
+        </div>
+        <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wide">
           3. Legal Attachments
         </h2>
       </div>
 
       <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Deed of Sale -->
-        <div
-          class="border-2 border-dashed border-slate-300 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:bg-slate-50 transition-colors cursor-pointer group"
-        >
-          <div
-            class="h-10 w-10 bg-slate-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-slate-200 transition-colors"
-          >
-            <i class="ph ph-file-text text-xl text-slate-500"></i>
+        <div class="border-2 border-dashed border-gray-200 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:bg-gray-50 hover:border-gray-300 transition-all-smooth cursor-pointer group">
+          <div class="h-14 w-14 bg-gray-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-gray-200 group-hover:scale-110 transition-all duration-300">
+            <i class="ph ph-file-text text-2xl text-gray-600"></i>
           </div>
-          <span class="text-sm font-medium text-slate-700">Deed of Sale</span>
-          <span class="text-xs text-slate-400 mt-1"
-            >Click to upload or drag file</span
-          >
+          <span class="text-sm font-semibold text-gray-900">Deed of Sale</span>
+          <span class="text-xs text-gray-400 mt-1">Click to upload or drag file</span>
           <input type="file" class="hidden" />
         </div>
 
         <!-- Title Copy -->
-        <div
-          class="border-2 border-dashed border-slate-300 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:bg-slate-50 transition-colors cursor-pointer group"
-        >
-          <div
-            class="h-10 w-10 bg-slate-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-slate-200 transition-colors"
-          >
-            <i class="ph ph-certificate text-xl text-slate-500"></i>
+        <div class="border-2 border-dashed border-gray-200 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:bg-gray-50 hover:border-gray-300 transition-all-smooth cursor-pointer group">
+          <div class="h-14 w-14 bg-gray-100 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-gray-200 group-hover:scale-110 transition-all duration-300">
+            <i class="ph ph-certificate text-2xl text-gray-600"></i>
           </div>
-          <span class="text-sm font-medium text-slate-700"
-            >Copy of Title (TCT/OCT)</span
-          >
-          <span class="text-xs text-slate-400 mt-1"
-            >Click to upload or drag file</span
-          >
+          <span class="text-sm font-semibold text-gray-900">Copy of Title (TCT/OCT)</span>
+          <span class="text-xs text-gray-400 mt-1">Click to upload or drag file</span>
           <input type="file" class="hidden" />
         </div>
 
         <!-- Other Attachments (Full Width) -->
         <div class="md:col-span-2">
-          <label class="block text-sm font-medium text-slate-700 mb-1"
-            >Other Supporting Documents</label
-          >
-          <input
-            type="file"
-            multiple
-            class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 cursor-pointer border border-slate-200 rounded-lg"
-          />
+          <label class="block text-sm font-semibold text-gray-700 mb-2">
+            Other Supporting Documents
+          </label>
+          <div class="relative">
+            <input
+              type="file"
+              multiple
+              class="block w-full text-sm text-gray-500 file:mr-4 file:py-3 file:px-6 file:rounded-xl file:border-0 file:text-sm file:font-semibold file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200 cursor-pointer border border-gray-200 rounded-2xl bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 transition-all-smooth"
+            />
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Action Buttons (Sticky Bottom or Just Bottom) -->
-    <div
-      class="flex items-center justify-end gap-4 pt-4 border-t border-slate-200 mt-8"
-    >
+    <!-- Action Buttons -->
+    <div class="flex items-center justify-end gap-3 pt-6 border-t border-gray-200 mt-8">
       <button
         type="button"
         onclick="loadComponent('pages/records.html', 'main-content')"
-        class="px-6 py-2.5 text-sm font-medium text-slate-600 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 shadow-sm transition-colors"
+        class="px-6 py-3 text-sm font-semibold text-gray-600 bg-white border border-gray-200 rounded-2xl hover:bg-gray-50 hover:border-gray-300 transition-all-smooth"
       >
         Cancel
       </button>
       <button
         type="submit"
-        class="px-6 py-2.5 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 shadow-sm transition-colors"
+        class="px-6 py-3 text-sm font-semibold text-gray-700 bg-white border border-gray-200 rounded-2xl hover:bg-gray-50 hover:border-gray-300 transition-all-smooth"
       >
         Save & Add Another
       </button>
       <button
         type="submit"
-        class="px-6 py-2.5 text-sm font-bold text-white bg-slate-900 rounded-lg hover:bg-slate-800 shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
+        class="px-6 py-3 text-sm font-bold text-white bg-gray-900 rounded-2xl hover:bg-gray-800 hover:shadow-lg hover:shadow-gray-900/20 transition-all-smooth flex items-center gap-2"
       >
-        <i class="ph ph-floppy-disk"></i> Save Record
+        <i class="ph ph-floppy-disk text-lg"></i> Save Record
       </button>
     </div>
   </form>
 </div>
+
+<script>
+// Dropdown functions
+function toggleDropdown(name) {
+  const dropdown = document.querySelector(`[data-dropdown="${name}"]`);
+  const menu = dropdown.querySelector('div.hidden, div.block');
+  const caret = dropdown.querySelector('.dropdown-caret');
+  
+  // Close all other dropdowns
+  document.querySelectorAll('.custom-dropdown').forEach(d => {
+    if (d !== dropdown) {
+      d.querySelector('div:not(.hidden)')?.classList.add('hidden');
+      d.querySelector('.dropdown-caret').style.transform = 'rotate(0deg)';
+    }
+  });
+  
+  if (menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden');
+    menu.classList.add('block');
+    caret.style.transform = 'rotate(180deg)';
+  } else {
+    menu.classList.add('hidden');
+    menu.classList.remove('block');
+    caret.style.transform = 'rotate(0deg)';
+  }
+}
+
+function selectOption(dropdownName, value, text) {
+  // Update button text
+  document.getElementById(`${dropdownName}-text`).textContent = text;
+  
+  // Update hidden select
+  const select = document.getElementById(`${dropdownName}-select`);
+  if (select) {
+    select.value = value;
+    select.dispatchEvent(new Event('change'));
+  }
+  
+  // Update active state in dropdown
+  const dropdown = document.querySelector(`[data-dropdown="${dropdownName}"]`);
+  const buttons = dropdown.querySelectorAll('button[onclick^="selectOption"]');
+  buttons.forEach(btn => {
+    btn.classList.remove('bg-gray-100', 'text-gray-900');
+    btn.classList.add('text-gray-600', 'hover:bg-gray-50', 'hover:text-gray-900');
+  });
+  
+  const activeBtn = Array.from(buttons).find(btn => btn.textContent.trim() === text);
+  if (activeBtn) {
+    activeBtn.classList.remove('text-gray-600', 'hover:bg-gray-50', 'hover:text-gray-900');
+    activeBtn.classList.add('bg-gray-100', 'text-gray-900');
+  }
+  
+  // Close dropdown
+  toggleDropdown(dropdownName);
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.custom-dropdown')) {
+    document.querySelectorAll('.custom-dropdown > div.block').forEach(menu => {
+      menu.classList.add('hidden');
+      menu.classList.remove('block');
+    });
+    document.querySelectorAll('.dropdown-caret').forEach(caret => {
+      caret.style.transform = 'rotate(0deg)';
+    });
+  }
+});
+</script>
